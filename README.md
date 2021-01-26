@@ -22,7 +22,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has a number of properties that define the model (number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
+This object has a number of [properties](#properties) that define the model (number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
 
 As an example, to simulate a spontaneous recovery paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
 ```
@@ -48,6 +48,8 @@ obj.R = 2;
 ```
 The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
 The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
+
+## Properties
 
 ### Parallel Computing
 
