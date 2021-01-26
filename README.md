@@ -22,9 +22,9 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has a number of [properties](#properties) that define the model (number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
+This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
 
-As an example, to simulate a spontaneous recovery paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
+To simulate learning with a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 ```
@@ -41,15 +41,16 @@ plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
 ```
-We can repeat the simulation *R* times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
+Here we have plotted the state feedback, which is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. To address this issue, we can repeat the simulation multiple times&mdash;each conditioned on a different random sequence of observation noise&mdash;and average the results. To do this, simply use the property *R* to specify the number of simulations, or runs, to perform. For example, to run 2 simulations, call
 ```
 obj.R = 2;
-[D,w] = obj.infer_COIN;
+[S,w] = obj.run_COIN;
 ```
+### Integrating out observation noise
+The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
+We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
 The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
 The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
-
-## Properties
 
 ### Parallel Computing
 
@@ -61,4 +62,6 @@ This simulation performed inference based on a single sample of the observation 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
 ### Plotting internal representations
+
+## Properties
 
