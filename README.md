@@ -68,11 +68,11 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property can be used to request certain variables to be stored. For example, if you wanted to examine the Kalman gain of the context with the highest responsibility on each trial store, you would need to request the Kalman gains and responsibilities to be stored by setting
+The store property can be used to request certain variables to be stored. As an example, to examine the Kalman gain of the context with the highest responsibility on each trial, you would request the Kalman gains and responsibilities to be stored by setting
 ```
 obj.store = {'k','cPost'};
 ```
-This must be set *before* running the model. 
+This property must be set *before* running the model. 
 
 ### Model fitting
 
