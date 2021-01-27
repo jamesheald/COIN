@@ -97,7 +97,12 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-In a [previous section](#running-the-model), we looked at how to run the model without taking adaptation data into account.
+In a [previous section](#running-the-model), we performed many runs of the COIN model. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
+
+simulation by specifying the model parameters and the paradigm. 
+
+
+Sometimes the parameters used to run a simulation were obtained by fitting the model to data. This data can be used to 
 
 ### Parallel Computing
 
