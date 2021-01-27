@@ -93,7 +93,7 @@ The adaptation vector should contain one element per channel trial and be ordere
 ```
 objective = obj.objective_COIN;
 ```
-Note that this objective is stochastic as it depends on random observation noise. To reduce the variance of the estimate of the objective and aid optimisation, increase the number of runs used to estimate the objective using property R.
+Note that this objective is stochastic as it depends on random observation noise. To reduce the variance of the estimate of the objective, which will aid optimisation, increase the number of runs used to estimate the objective via the property R.
 
 
 To compute the objective, define a series of perturbations and sensory cues (if applicable):
