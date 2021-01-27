@@ -72,7 +72,7 @@ The store property can be used to request to store specific variables. To make a
 ```
 obj.store = {'k','cPost'};
 ```
-Having stored these variables, for example, the Kalman gain of the context with the highest responsibility can be computed:
+Having stored these variables, the Kalman gain of the context with the highest responsibility (for example) can be computed:
 ```
 for trial = 1:numel(obj.x)
     for particle = 1:obj.P
