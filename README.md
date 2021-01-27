@@ -85,18 +85,17 @@ The store property must be set *before* running the model. For a full list of th
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. Use the adaptation property to define the data:
+The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. To estimate this objective via simulation, first define the paradigm and parameters, and then use the adaptation property to define the data:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. To compute an estimate of the objective to the minimised, call the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. To estimate the objective, call the objective_COIN method on object obj:
 ```
 objective = obj.objective_COIN;
 ```
 Note that this is a stochastic estimate of the objective as it depends on random observation noise. To reduce the variance of this estimate (to aid parameter optimisation), increase the number of runs used to estimate the objective via the property R.
 
 
-To compute the objective, define a series of perturbations and sensory cues (if applicable):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 obj.q = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
@@ -107,13 +106,6 @@ Once the paradigm (perturbations, sensory cues) and parameters have been defined
 Parameter optimisation requires computing this objective for
 
 To fit the COIN model to data, requires evaluating the we given a paradigm, parameters and data
-
-obj.sigmaM = POpt.motorsd;
-obj.adMu = [POpt.a 0];
-obj.sigmaQ = POpt.qsd;
-obj.adLambda = diag([POpt.aprecsd POpt.dprecsd].^2);
-obj.alpha = POpt.alpha;
-obj.rho = POpt.rho;
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
