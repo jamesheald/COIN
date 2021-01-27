@@ -83,7 +83,7 @@ end
 ```
 The store property must be set *before* running the model. For a full list of the names of variables that can be stored see [Variable names](#variable-names) .
 
-### Fitting the model
+### Fitting the model to data
 
 The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. Use the adaptation property to define the data:
 ```
