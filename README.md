@@ -93,7 +93,7 @@ The adaptation vector should contain one element per channel trial and be ordere
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, increase the number of runs used to estimate the objective via the property R. This estimate can be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to estimate the objective can be increased via the property R. This is best done in conjunction with [Parallel Computing](#parallel-computing) to produce acceptable runtimes. This estimate can be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
@@ -103,7 +103,7 @@ The more simulations we perform (the greater R is), the greater the computationa
 
 ### Parallel Computing
 
-The computational complexity of the COIN model scales linearly wit the number of simulations (obj.R). To reduce runtime, each simulation can be performed in parallel across multiple CPU cores. To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
+The computational complexity of the COIN model scales linearly with the number of runs. To reduce runtime, each run can be performed in parallel across multiple CPU cores. To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
 
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 ### Performing online inference
