@@ -56,13 +56,13 @@ obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored on request).
+Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored as needed).
 
 After running the model, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The data in P averages the simulations. In general, the more simulations there are, the cleaner the results will be. The plots may take some time to generate, as they require contexts to be relabelled. 
+This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The plots may take some time to generate, as they require contexts to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables are averaged across particles and simulations to generate P. In general, the more simulations there are, the cleaner the plots will be. 
 ### Integrating out observation noise
 The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
 We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
