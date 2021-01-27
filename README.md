@@ -68,7 +68,7 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property can be used to request to store specific variables. To make a request, add the names of the variables of interest to the store property as a string. For example, to store the Kalman gains and responsibilities set
+The store property can be used to request to store specific variables. To make a request, add the names of the variables of interest to the store property as strings. For example, to store the Kalman gains and responsibilities set
 ```
 obj.store = {'k','cPost'};
 ```
