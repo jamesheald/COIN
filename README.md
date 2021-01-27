@@ -95,16 +95,21 @@ o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
-### Inferring internal representations of the COIN model fit to adaptation data
+### Inferring internal representations fit to adaptation data
 
-The sequence of observation noise that a participant perceived is unknown. However, some sequences are more probable than others based on their adaptation data.
+Sometimes, the parameters used to run the COIN model are obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
+```
+obj.adaptation = randn(1,150); % random vector (for illustration)
+[S,w] = obj.run_COIN;
+```
+Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was performed on the last channel trial of the simulation) and should be used to comptue a weighted average when averaging.
+
+
+The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
 
 In a [previous section](#running-the-model), we simulated the COIN model by performing many runs on the same paradigm using the same parameters. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
 
 simulation by specifying the model parameters and the paradigm. 
-
-
-Sometimes the parameters used to run a simulation were obtained by fitting the model to data. This data can be used to 
 
 ### Parallel Computing
 
