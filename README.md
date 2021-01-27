@@ -72,7 +72,7 @@ Add the names of the variables you want to store to the store property as string
 ```
 obj.store = {'k','cPost'};
 ```
-Having stored these variables, you can compute the Kalman gain of the context with the highest responsibility (for example):
+The store property must be set *before* running the model. After running the model, these variables are available for analysis. For example, the Kalman gain of the context with the highest responsibility can be computed:
 ```
 for trial = 1:numel(obj.x)
     for particle = 1:obj.P
@@ -81,7 +81,7 @@ for trial = 1:numel(obj.x)
     end
 end
 ```
-The store property must be set *before* running the model. For a full list of the names of variables that can be stored see [Variable names](#variable-names) .
+For a full list of the names of variables that can be stored see [Variable names](#variable-names) .
 
 ### Fitting the model to data
 
