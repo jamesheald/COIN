@@ -41,7 +41,7 @@ plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
 ```
-Here we have plotted the state feedback, which is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. To address this issue, we can repeat the simulation multiple times&mdash;each conditioned on a different random sequence of observation noise&mdash;and average the results. To do this, simply use the property *R* to specify the number of simulations, or runs, to perform. For example, to run 2 simulations, call
+The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. We can use the property R to run multiple simulations&mdash;each conditioned on a different random sequence of observation noise. For example, to run 2 simulations, call
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
