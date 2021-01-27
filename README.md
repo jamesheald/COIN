@@ -64,7 +64,7 @@ After running the model, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once contexts have been relabelled, the variables to be plotted are averaged across particles and runs. In general, the more runs there are, the less noisy the results will be. 
+This will generate a state | context plot and a predicted probabilities plot. The structure P contains the plotted data (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that the plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once these contexts have been relabelled, the variables to be plotted are averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Storing variables
 
@@ -72,7 +72,7 @@ Add the names of the variables you want to store to the store property as string
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed:
+The store property must be set *before* running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -81,7 +81,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Because all particles within the same run have equal weight, the result obtained above can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+This result can be averaged across particles on each trial as all particles within the same run have equal weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
@@ -93,7 +93,7 @@ The adaptation vector should contain one element per channel trial and be ordere
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
@@ -102,6 +102,8 @@ The output of each and each simulation, or run, is assigned a weight (*w*). In t
 The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
 
 ### Parallel Computing
+
+It is possible to obtain better fits to data and cleaner internal representations by increasing the number of runs. However, 
 
 The computational complexity of the COIN model scales linearly with the number of runs. To reduce runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
 
