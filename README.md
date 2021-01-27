@@ -85,11 +85,11 @@ The store property must be set *before* running the model. For a full list of th
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. To estimate this objective via simulation, define the paradigm and parameters, and use the adaptation property to define the data:
+The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. To estimate this objective via simulation, use the adaptation property to define the data:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Call the objective_COIN method on object obj to estimate the objective:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have been defined, call the objective_COIN method on object obj to estimate the objective:
 ```
 objective = obj.objective_COIN;
 ```
