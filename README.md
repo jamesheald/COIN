@@ -89,7 +89,7 @@ The COIN model is fit to data by finding the parameters that minimise the negati
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial (ordered by channel trial number).
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number.
 
 and then call the objective_COIN method on object obj:
 ```
@@ -108,7 +108,7 @@ obj.q = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 Once the paradigm (perturbations, sensory cues) and parameters have been defined in properties, 
 Parameter optimisation requires computing this objective for
 
-To fit the COIN model to data, requires evaluating the  we given a paradigm, parameters and data
+To fit the COIN model to data, requires evaluating the we given a paradigm, parameters and data
 
 obj.sigmaM = POpt.motorsd;
 obj.adMu = [POpt.a 0];
