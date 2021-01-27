@@ -73,7 +73,14 @@ The store property can be used to request to store specific variables. To make a
 obj.store = {'k','cPost'};
 ```
 Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. 
-
+```
+for trial = 1:numel(obj.x)
+    for particle = 1:obj.P
+        [~,j] = max(S{1}.cPost(:,particle,trial));
+        k(particle,trial) = S{1}.k(j,particle,trial);
+    end
+end
+```
 The store property must be set *before* running the model. See [Variable names](#variable-names) for a full list of the names of variables that can be stored.
 
 ### Model fitting
