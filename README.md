@@ -85,7 +85,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data using maximum likelihood estimation. To fit the model, first define the data via the adaptation property:
+The parameters of the COIN model are fit to data using maximum likelihood estimation. To fit the model, first assign the data to the adaptation property:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
