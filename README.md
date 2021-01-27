@@ -85,20 +85,27 @@ The store property must be set *before* running the model. For a full list of th
 
 ### Fitting the model
 
-The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. Once the paradigm (perturbations, sensory cues) and parameters have been defined in properties, define the data:
+The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. Use the adaptation property to define the data:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
+The adaptation vector should contain one element per channel trial (ordered by channel trial number).
+
 and then call the objective_COIN method on object obj:
 ```
 objective = obj.objective_COIN;
 ```
+Note that this objective is stochastic as it depends on random observation noise. To reduce the variance of the objective, whcih will aid optimisation, use obj.R to increase the number of runs used to estimate the objective.
+
+
 To compute the objective, define a series of perturbations and sensory cues (if applicable):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 obj.q = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 ```
 
+
+Once the paradigm (perturbations, sensory cues) and parameters have been defined in properties, 
 Parameter optimisation requires computing this objective for
 
 To fit the COIN model to data, requires evaluating the  we given a paradigm, parameters and data
