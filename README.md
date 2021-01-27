@@ -2,6 +2,8 @@
 
 The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. Each memory stores information learned about the dynamical and sensory properties of the environment associated with the corresponding context.
 
+The model implemented here is described in detail in a recent [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1) submission by James Heald, Máté Lengyel and Daniel Wolpert.
+
 ## Dependencies
 
 The COIN model requires installation of the following packages, which improve the efficiency of the code:
@@ -102,7 +104,7 @@ Sometimes, the parameters used to run the COIN model are obtained by fitting the
 obj.adaptation = randn(1,150); % random vector (for illustration)
 [S,w] = obj.run_COIN;
 ```
-Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was performed on the last channel trial of the simulation) and should be used to comptue a weighted average when averaging.
+Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken on the last channel trial of the simulation). When averaging across runs, these weights need to be taken into account.
 
 
 The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
