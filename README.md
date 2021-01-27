@@ -49,6 +49,7 @@ obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
 S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
+
 ### Plotting internal representations
 
 Use properties to indicate which variables to plot as well as to provide additional information needed to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities set
@@ -64,6 +65,13 @@ After running the model, call the plot_COIN method on object obj:
 [P,S] = obj.plot_COIN(S,w);
 ```
 This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the variables to be plotted are averaged across particles and runs. In general, the more runs there are, the cleaner the results will be. 
+
+### Storing variables
+
+The store property is a cell array that can be used to indicate which variables need to be stored. Each cell of this array contains the name (a string) of a variable.
+
+### Model fitting
+
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
 We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
@@ -77,13 +85,11 @@ The computational complexity of the COIN model scales linearly wit the number of
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 ### Performing online inference
 
-### Model fitting
-
-### Storing variables
-
 ### Evaluating the log likelihood
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
 ## Properties
+
+note that xpred, vpred and cpred are stored before resampling
 
