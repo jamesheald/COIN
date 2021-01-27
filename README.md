@@ -83,7 +83,17 @@ end
 ```
 The store property must be set *before* running the model. For a full list of the names of variables that can be stored see [Variable names](#variable-names) .
 
-### Model fitting
+### Fitting the model
+
+```
+obj.adaptation = randn(1,150); % random vector (for illustration)
+```
+After running the model, call the objective_COIN method on object obj:
+```
+objective = obj.objective_COIN;
+```
+
+objective = objective_COIN(obj)
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
