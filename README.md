@@ -43,7 +43,7 @@ plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
 ```
-The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. We can use the property R to run multiple simulations&mdash;each conditioned on a different random sequence of observation noise. For example, to run 2 simulations, call
+The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. We can use the property R to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
@@ -62,7 +62,9 @@ After running the model, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The plots may take some time to generate, as they require contexts to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables are averaged across particles and simulations to generate P. In general, the more simulations there are, the cleaner the plots will be. 
+This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). 
+
+The plots may take some time to generate, as they require contexts to be relabelled on each trial. Once contexts have been relabelled, the results are averaged across particles and runs. In general, the more runs there are, the cleaner the results will be. 
 ### Integrating out observation noise
 The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
 We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
