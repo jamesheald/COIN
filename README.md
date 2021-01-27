@@ -99,7 +99,7 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations fit to adaptation data
 
-Sometimes, the parameters used to run the COIN model are obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
+Sometimes, the parameters used to run the COIN model were obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 [S,w] = obj.run_COIN;
