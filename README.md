@@ -51,13 +51,13 @@ obj.R = 2;
 S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
 ### Plotting internal representations
 
-Use properties to indicate which variables to plot and to provide additional information required to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities, set
+Use properties to indicate which variables to plot and to provide additional information required to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities set
 ```
 obj.xPredPlot = true; % I want to plot the state | context
-obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
+obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored as needed).
+These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored as needed).
 
 After running the model, call the plot_COIN method on object obj:
 ```
