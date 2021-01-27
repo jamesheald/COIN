@@ -56,7 +56,7 @@ obj.xPredPlot = true; % state | context
 obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
 obj.cPredPlot = true; % predicted probabilities
 ```
-Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting when the model is run (online inference does not require all variables on all trials to be stored in memory, and so variables are only stored if required for model analysis to reduce memory requirements).
+Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are stored on request).
 
 ### Integrating out observation noise
 The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
