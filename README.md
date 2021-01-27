@@ -68,11 +68,11 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property can be used to request to store specific variables. To make a request, add the name of the variable of interest to the store property as a string. For example, to request to store the Kalman gains and responsibilities set
+The store property can be used to request to store specific variables. To make a request, add the names of the variables of interest to the store property as a string. For example, to store the Kalman gains and responsibilities set
 ```
 obj.store = {'k','cPost'};
 ```
-Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. 
+Having stored these variables, one could compute the Kalman gain of the context with the highest responsibility on each trial"
 ```
 for trial = 1:numel(obj.x)
     for particle = 1:obj.P
