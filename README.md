@@ -26,7 +26,7 @@ obj = COIN;
 ```
 This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
 
-To simulate learning with a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
+To simulate learning on a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 ```
@@ -51,7 +51,7 @@ obj.R = 2;
 S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
 ### Plotting internal representations
 
-Use properties to indicate which variables to plot, as well as any additional information such as the values at which to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
+Use properties to indicate which variables to plot and to provide additional information required to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities, set
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
