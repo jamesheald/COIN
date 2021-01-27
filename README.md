@@ -89,7 +89,7 @@ The parameters of the COIN model are fit to data using maximum likelihood estima
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have been defined (see [Properties](#properties)), the negative log likelihood of the data (the objective to be minimised) can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
