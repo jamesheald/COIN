@@ -50,13 +50,13 @@ obj.R = 2;
 ```
 ### Plotting internal representations
 
-To plot specific model variables, the relevant properties must be flagged. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
+Use properties to indicate which variables to plot, as well as any additional information such as the values at which to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
 ```
 obj.xPredPlot = true; % state | context
 obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
 obj.cPredPlot = true; % predicted probabilities
 ```
-Note that these properties must be set *before* running the model so that the relevant variales can be stored for plotting purposes. *To reduce memory requirements, the COIN model does not store all inferred variables on all trials as standard. Instead, variables are stored on an as-needed basis.* 
+Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting when the model is run (online inference does not require all variables on all trials to be stored in memory, and so variables are only stored if required for model analysis to reduce memory requirements).
 
 ### Integrating out observation noise
 The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
