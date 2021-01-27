@@ -85,15 +85,15 @@ The store property must be set *before* running the model. For a full list of th
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log likelihood of the data. To estimate this objective via simulation, define the data via the adaptation property:
+The parameters of the COIN model are fit to data using maximum likelihood estimation. To fit the model, first define the data via the adaptation property:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined (see [Properties](#properties)), the objective can be estimated by calling the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain it can be increased via the property R (this is best done with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain it can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
