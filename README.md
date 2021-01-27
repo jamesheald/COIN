@@ -104,7 +104,7 @@ Sometimes, the parameters used to run the COIN model are obtained by fitting the
 obj.adaptation = randn(1,150); % random vector (for illustration)
 [S,w] = obj.run_COIN;
 ```
-Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken on the last channel trial of the simulation). When averaging across runs, these weights need to be taken into account.
+Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken when the weights were last updated). When averaging across runs, these weights need to be taken into account.
 
 
 The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
