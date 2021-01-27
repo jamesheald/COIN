@@ -81,7 +81,7 @@ for trial = 1:numel(obj.x)
     end
 end
 ```
-Note that all particles within a run have equal weight and so we can simply average across particles. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Note that all particles within a run have equal weight and so we can simply average the final result across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
