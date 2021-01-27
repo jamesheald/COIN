@@ -72,7 +72,7 @@ Add the names of the variables you want to store to the store property as string
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. After running the model, the stored variables can be analysed. For example, the Kalman gain of the context with the highest responsibility can be computed:
+The store property must be set *before* running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -81,7 +81,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Note that all particles within a run have equal weight and so we can simply average the final result across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Note that all particles within a run have equal weight and so the result above can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
