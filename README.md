@@ -72,7 +72,7 @@ Add the names of the variables you want to store to the store property as string
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. After running the model, these variables are available for analysis. For example, the Kalman gain of the context with the highest responsibility can be computed:
+The store property must be set *before* running the model. After running the model, the stored variables can be analysed. For example, the Kalman gain of the context with the highest responsibility can be computed:
 ```
 for trial = 1:numel(obj.x)
     for particle = 1:obj.P
@@ -81,7 +81,7 @@ for trial = 1:numel(obj.x)
     end
 end
 ```
-For a full list of the names of variables that can be stored see [Variable names](#variable-names) .
+Note that all particles within a run have equal weight and so we can simply average across particles. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
@@ -93,7 +93,7 @@ The adaptation vector should contain one element per channel trial and be ordere
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
