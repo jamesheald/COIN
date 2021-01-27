@@ -89,21 +89,11 @@ The COIN model is fit to data by finding the parameters that minimise the negati
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined, the objective can be estimated by calling the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined (see [Properties](#properties)), the objective can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the objective. It is stochastic as it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, increase the number of runs used to estimate the objective via the property R. This estimate can be passed to an optimiser. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
-
-```
-obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
-obj.q = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
-```
-
-Once the paradigm (perturbations, sensory cues) and parameters have been defined in properties, 
-Parameter optimisation requires computing this objective for
-
-To fit the COIN model to data, requires evaluating the we given a paradigm, parameters and data
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
