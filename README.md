@@ -95,11 +95,9 @@ o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate and aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can then be passed to an optimiser. It is important to use an optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
-### Integrating out observation noise
-The basic simulation above have performed inference conditioned on a random sequence of observation noise.
-We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
-The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
-The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
+### Inferring internal representations of the COIN model fit to adaptation data
+
+In a [previous section](#running-the-model), we looked at how to run the model without taking adaptation data into account.
 
 ### Parallel Computing
 
@@ -108,15 +106,16 @@ It is possible to obtain better fits to data and cleaner internal representation
 The computational complexity of the COIN model scales linearly with the number of runs. To reduce runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
 
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
-### Performing online inference
 
-### Evaluating the log likelihood
+### Integrating out observation noise
+The basic simulation above have performed inference conditioned on a random sequence of observation noise.
+We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
+The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
+The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
 
-### Inferring internal representations of the COIN model fit to adaptation data
+### Properties
 
-## Properties
-
-## Variable names
+### Variable names
 
 note that xpred, vpred and cpred are stored before resampling
 
