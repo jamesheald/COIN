@@ -16,7 +16,9 @@ addpath(genpath('directory'))
 ```
 where 'directory' is the full path to the root folder of the package.
 
-## Running the model
+## The model
+
+### Running the model
 
 The COIN model is implemented as a class in MATLAB. An object of the class can be created by calling
 ```
@@ -46,6 +48,16 @@ The state feedback is the perturbation plus random observation noise. In general
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
+### Plotting internal representations
+
+To plot specific model variables, the relevant properties must be flagged. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
+```
+obj.xPredPlot = true; % state | context
+obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
+obj.cPredPlot = true; % predicted probabilities
+```
+Note that these properties must be set *before* running the model so that the relevant variales can be stored for plotting purposes. *To reduce memory requirements, the COIN model does not store all inferred variables on all trials as standard. Instead, variables are stored on an as-needed basis.* 
+
 ### Integrating out observation noise
 The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
 We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
@@ -59,11 +71,13 @@ The computational complexity of the COIN model scales linearly wit the number of
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 ### Performing online inference
 
+### Model fitting
+
+### Storing variables
+
 ### Evaluating the log likelihood
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-### Plotting internal representations
-
-## Properties
+## Class properties
 
