@@ -10,7 +10,7 @@ The COIN model requires installation of the following packages, which improve th
 - "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh. Run make.m to compile the mex files.
 - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 
-Add each package to MATLAB's search path using 
+Add each package to the MATLAB search path using 
 ```
 addpath(genpath('directory'))
 ```
@@ -26,11 +26,11 @@ obj = COIN;
 ```
 This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
 
-To simulate learning on a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
+To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 ```
-and then call the run_COIN method on object obj:
+and call the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
@@ -68,15 +68,11 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property can be used to request to store specific variables. To make a request, add the name of the variable to the store property as a string. For example, to request to store the Kalman gains and responsibilities set
+The store property can be used to request to store specific variables. To make a request, add the name of the variable as a string. For example, to request to store the Kalman gains and responsibilities set
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model.
-
-Storing these variables 
-
-to examine the Kalman gain of the context with the highest responsibility on each trial
+The store property must be set *before* running the model. Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. For Variable names a full list of the names of variables that can be stored.
 
 ### Model fitting
 
