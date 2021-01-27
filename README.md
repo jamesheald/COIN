@@ -51,7 +51,7 @@ obj.R = 2;
 S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
 ### Plotting internal representations
 
-Use properties to indicate which variables to plot and to provide additional information required to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities set
+Use properties to indicate which variables to plot as well as to provide additional information needed to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities set
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
@@ -63,11 +63,9 @@ After running the model, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). 
-
-The plots may take some time to generate, as they require contexts to be relabelled on each trial. Once contexts have been relabelled, the results are averaged across particles and runs. In general, the more runs there are, the cleaner the results will be. 
+This will generate a state | context plot and a predicted probabilities plot. The structure P contains the data being plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). The plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once contexts have been relabelled, the results are averaged across particles and runs. In general, the more runs there are, the cleaner the results will be. 
 ### Integrating out observation noise
-The basic simulation above  have performed inference conditioned on a random sequence of observation noise.
+The basic simulation above have performed inference conditioned on a random sequence of observation noise.
 We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
 The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
 The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
