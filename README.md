@@ -89,13 +89,11 @@ The COIN model is fit to data by finding the parameters that minimise the negati
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number.
-
-and then call the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. To compute an estimate of the objective to the minimised, call the objective_COIN method on object obj:
 ```
 objective = obj.objective_COIN;
 ```
-Note that this objective is stochastic as it depends on random observation noise. To reduce the variance of the objective, whcih will aid optimisation, use obj.R to increase the number of runs used to estimate the objective.
+Note that this objective is stochastic as it depends on random observation noise. To reduce the variance of the estimate of the objective and aid optimisation, increase the number of runs used to estimate the objective using property R.
 
 
 To compute the objective, define a series of perturbations and sensory cues (if applicable):
