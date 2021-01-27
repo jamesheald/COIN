@@ -72,9 +72,9 @@ The store property can be used to request to store specific variables. To make a
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. 
+Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. 
 
-See [Variable names](#variable-names) for a full list of the names of variables that can be stored.
+The store property must be set *before* running the model. See [Variable names](#variable-names) for a full list of the names of variables that can be stored.
 
 ### Model fitting
 
