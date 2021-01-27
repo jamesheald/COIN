@@ -89,11 +89,11 @@ The COIN model is fit to data by finding the parameters that minimise the negati
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined, call the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined, the objective can be estimated by calling the objective_COIN method on object obj:
 ```
-objective = obj.objective_COIN;
+o = obj.objective_COIN;
 ```
-This objective can be passed to an optimiser. Note that this is a stochastic estimate of the objective as it depends on random observation noise. To reduce the variance of this estimate (to aid parameter optimisation), increase the number of runs used to estimate the objective via the property R. It is important to use an optimiser that is appropriate for a stochastic objective function (e.g. Bayesian adaptive direct search).
+Note that this returns a stochastic estimate of the objective as it depends on random observation noise. To reduce the variance of this estimate (to aid parameter optimisation), increase the number of runs used to estimate the objective via the property R. It is important to use an optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
