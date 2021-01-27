@@ -43,11 +43,12 @@ plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
 ```
-The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. We can use the property R to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
+The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. Use the property R to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
+S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
 ### Plotting internal representations
 
 Use properties to indicate which variables to plot, as well as any additional information such as the values at which to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
