@@ -97,7 +97,9 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-In a [previous section](#running-the-model), we performed many runs of the COIN model. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
+The sequence of observation noise that a participant perceived is unknown. However, some sequences are more probable than others based on their adaptation data.
+
+In a [previous section](#running-the-model), we simulated the COIN model by performing many runs on the same paradigm using the same parameters. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
 
 simulation by specifying the model parameters and the paradigm. 
 
