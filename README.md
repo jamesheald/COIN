@@ -52,9 +52,9 @@ obj.R = 2;
 
 Use properties to indicate which variables to plot, as well as any additional information such as the values at which to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities, the following properties can be set as
 ```
-obj.xPredPlot = true; % state | context
+obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % values of the state at which to evaluate state | context
-obj.cPredPlot = true; % predicted probabilities
+obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
 Note that these properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are stored on request).
 
