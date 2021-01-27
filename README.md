@@ -54,6 +54,8 @@ The more simulations we perform (the greater R is), the greater the computationa
 
 ### Parallel Computing
 
+The computational complexity of the COIN model scales linearly wit the number of simulations (obj.R). To reduce runtime, each simulation can be performed in parallel across multiple CPU cores. To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
+
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 ### Performing online inference
 
