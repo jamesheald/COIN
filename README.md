@@ -24,7 +24,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
+This object has a number of [properties](#Class properties) that define the model (e.g. number of particles, model parameters) and the paradigm to be simulated (perturbations, sensory cues). Additional properties allow the user to specify which variables to plot.
 
 To simulate learning on a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
 ```
@@ -57,7 +57,7 @@ obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored as needed).
+These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference does not require all variables on all trials to be stored in memory, and so to reduce memory requirements, variables are only stored as needed). See [Class properties](#Class properties) for information on how to plot other variables.
 
 After running the model, call the plot_COIN method on object obj:
 ```
