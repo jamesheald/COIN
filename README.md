@@ -68,11 +68,13 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property can be used to request to store specific variables. To make a request, add the name of the variable as a string. For example, to request to store the Kalman gains and responsibilities set
+The store property can be used to request to store specific variables. To make a request, add the name of the variable to the store property as a string. For example, to request to store the Kalman gains and responsibilities set
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. For Variable names a full list of the names of variables that can be stored.
+The store property must be set *before* running the model. Storing these variables would allow the Kalman gain of the context with the highest responsibility on each trial to be computed, for example. 
+
+See [Variable names](#variable-names) for a full list of the names of variables that can be stored.
 
 ### Model fitting
 
@@ -94,6 +96,8 @@ This simulation performed inference based on a single sample of the observation 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
 ## Properties
+
+## Variable names
 
 note that xpred, vpred and cpred are stored before resampling
 
