@@ -74,8 +74,8 @@ obj.store = {'k','cPost'};
 ```
 The store property must be set *before* running the model. After running the model, the stored variables can be analysed. For example, the Kalman gain of the context with the highest responsibility can be computed:
 ```
-for trial = 1:numel(obj.x)
-    for particle = 1:obj.P
+for trial = 1:numel(obj.x) % loop over trials
+    for particle = 1:obj.P % loop over particles
         [~,j] = max(S{1}.cPost(:,particle,trial));
         k(particle,trial) = S{1}.k(j,particle,trial);
     end
