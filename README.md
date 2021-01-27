@@ -68,8 +68,11 @@ This will generate a state | context plot and a predicted probabilities plot. Th
 
 ### Storing variables
 
-The store property is a cell array that can be used to indicate which variables need to be stored. Each cell of this array contains the name (a string) of a variable.
-
+The store property can be used to request variables to be stored. For example, to request that the Kalman gain and responsibilities be stored set
+```
+obj.store = {'k','cPost'};
+```
+Each
 ### Model fitting
 
 ### Integrating out observation noise
