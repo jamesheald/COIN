@@ -32,7 +32,7 @@ To simulate learning on a simple paradigm, define a series of perturbations (use
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
 ```
-and call the run_COIN method on object obj:
+and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
