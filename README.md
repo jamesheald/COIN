@@ -59,7 +59,7 @@ obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-These properties must be set before running the model so that the relevant variables can be stored for plotting (online inference can be performed without storing in memory all variables on all trials, and so to reduce memory requirements, variables are only stored as needed). For information on other variables available for plotting and how to plot them, see [Properties](#properties).
+These properties must be set before running the model so that the relevant variables can be stored for plotting. For information on other variables available for plotting and how to plot them, see [Properties](#properties).
 
 After running the model, call the plot_COIN method on object obj:
 ```
@@ -69,7 +69,7 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 ### Storing variables
 
-To store variables inferred by the COIN model, add the names of the variables you want to store to the store property as strings. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing in memory all variables inferred by the COIN model on all previous trials, and so to reduce memory requirements, variables are only stored as needed. To store variables inferred by the COIN model, add the names of the variables you want to store to the store property as strings. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cPost'};
 ```
