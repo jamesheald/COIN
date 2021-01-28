@@ -52,7 +52,7 @@ Here S is an array with one cell per run and w is vector specifying the relative
 
 ### Plotting internal representations
 
-To plot specific variables, activate the relevant plotting flags in the properties of the object. Additional information may also be needed to geneate the plots, such as the points to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities:
+To plot specific variables, activate the relevant plotting flags defined in properties. To plot distributions, also specify the points at which to evaluate a distribution at. For example, to plot the distribution of the state of each context and the predicted probabilities:
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
