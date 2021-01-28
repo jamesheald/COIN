@@ -93,9 +93,9 @@ This method returns a stochastic estimate of the objective. It is stochastic bec
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-If adaptation data is available, each run of a simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal and should be used to compute a weighted average when averaging variables or distributions across runs.
+If adaptation data is available, each run of a simulation can be assigned a weight based on how well it explains the data. These weights should be used when averaging variables or distributions of interest across runs.
 
-although they can be if the runs were recently resampled).
+Note that while these weights will not be equal in general, they can be if the runs were recently resampled).
 
 
 ### Using adaptation data to assign weights to runs
