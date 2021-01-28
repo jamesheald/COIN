@@ -36,7 +36,7 @@ and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-This simulaton uses a set of default paramters stored in properties. The adaptation and state feedback are contained in S and can be plotted:
+This simulaton uses a default set of paramters stored in properties. The adaptation and state feedback are contained in S and can be plotted:
 ```
 figure
 plot(obj.x,'k')
