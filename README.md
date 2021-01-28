@@ -53,13 +53,13 @@ S is a cell array (one cell per run) and w is vector specifying the relative wei
 
 ### Plotting internal representations
 
-To plot specific internal representations of the COIN model, indicate which variables you want to plot using the properties. For example, to plot the distribution of the state of each context and the predicted probabilities, set the following properties:
+To plot specific internal representations of the COIN model, specify which variables you want to plot via the corresponding properties. For example, to plot the distribution of the state of each context and the predicted probabilities:
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference can be performed without storing all variables on all trials in memory, and so to reduce memory requirements, variables are stored as needed). See [Properties](#properties) for information on other variables available for plotting.
+These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference can be performed without storing all variables on all trials in memory, and so to reduce memory requirements, variables are stored as needed). See [Properties](#properties) for information on how to plot other variables.
 
 After running the model, call the plot_COIN method on object obj:
 ```
