@@ -85,7 +85,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data via maximum likelihood estimation. Use the adaptation property to pass the data to the model. The data should be a vector with one element per trial (use NaN if no measure of adaptation was obtained on a trial).
+The parameters of the COIN model are fit to data via maximum likelihood estimation. Use the adaptation property to define the data as a vector with one element per trial (use NaN if no measure of adaptation was obtained on a trial).
 
 First assign the data to the adaptation property:
 ```
