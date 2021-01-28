@@ -36,7 +36,7 @@ and call the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-To plot the adaptation:
+The adaptation and state feedback is contained in S:
 ```
 figure
 plot(obj.x,'k')
