@@ -85,18 +85,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data via maximum likelihood estimation. Use the adaptation property to define the data as a vector with one element per trial (use NaN if no measure of adaptation was obtained on a trial).
-
-First assign the data to the adaptation property:
-```
-obj.adaptation = randn(1,150); % random vector (for illustration)
-```
-this needs to be more general for fitting VMR without channels!!!
-
-the adaptation vector should have one element per trial
-
-The length of this vector should be equal to the number of channel trials and element
-The adaptation vector should contain one scalar data point per channel trial and the data should be arranged in the same order as the corresponding channel trials. After the parameters of the model and the paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+The parameters of the COIN model are fit to data via maximum likelihood estimation. Use the adaptation property to define the data. The data should be in vector form with one element per trial (use NaN on trials where no measure of adaptation was obtained). Once the parameters of the model and the paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
