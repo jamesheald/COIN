@@ -93,7 +93,7 @@ This method returns a stochastic estimate of the objective. It is stochastic bec
 
 ### Inferring internal representations fit to adaptation data
 
-After fitting the model to data, the internal representations that generated the data can be inferred. This can be done by defining the adaptation property before calling the run_COIN method. Each run will now be assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal, although they will be if a resampling step was taken when the weights were last updated. These weights should be used to compute a weighted average when averaging across runs.
+After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
 
 
 
