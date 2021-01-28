@@ -82,7 +82,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Because all particles within the same run have the same weight (as particles are resampled on every trial), this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Because all particles within the same run have the same weight (as the COIN model resamples particles on every trial), the above result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
