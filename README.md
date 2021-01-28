@@ -50,7 +50,7 @@ The state feedback is the perturbation plus random observation noise. In general
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
+S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data) for situations in which adaptation is used to assign a weight to each run).
 
 ### Plotting internal representations
 
@@ -99,12 +99,12 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations fit to adaptation data
 
-Sometimes, the parameters used to run the COIN model were obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
+Sometimes, the parameters used to run the COIN model were fit to data (as opposed to being chosen by hand, for example). In this case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 [S,w] = obj.run_COIN;
 ```
-Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken when the weights were last updated). When averaging across runs, these weights need to be taken into account.
+Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken when the weights were last updated). When averaging across runs, these weights should be taken into account.
 
 
 The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
