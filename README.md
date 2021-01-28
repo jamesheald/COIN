@@ -53,7 +53,7 @@ S is a cell array (one cell per run) and w is vector specifying the relative wei
 
 ### Plotting internal representations
 
-To plot specific internal representations of the COIN model, specify which variables you want to plot via the corresponding properties. For example, to plot the distribution of the state of each context and the predicted probabilities:
+To plot specific variables, set the corresponding properties. For example, to plot the distribution of the state of each context and the predicted probabilities:
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
@@ -82,7 +82,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Note that this result can be averaged across particles on each trial as all particles within the same run have equal weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Because all particles within the same run have the same weight (the particle learning algorithm used by the COIN model resamples particles on every trial), this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
