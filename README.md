@@ -30,7 +30,7 @@ This object has a number of [properties](#properties) that define the model (e.g
 
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
-obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)];
+obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)]; % spontaneous recovery paradigm
 ```
 and run the model by calling the run_COIN method on object obj:
 ```
@@ -69,11 +69,11 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 ### Storing variables
 
-Online inference can be performed without storing in memory all the past values of all variables inferred by the COIN model, and so to reduce memory requirements, the past values of variables are only stored if they need to be analysed. To store a specific variable on all trials, add the name of the variable to the store property. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing in memory all the past values of all variables inferred by the COIN model, and so to reduce memory requirements, the past values of variables are only stored if they need to be analysed. To store a specific variable on every trial, add the name of the variable to the store property. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cPost'};
 ```
-This property must be set before running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
+This property must be set before running the model. The stored variables can be analysed after running the model. For example, to compute the Kalman gain of the context with the highest responsibility for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -82,7 +82,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Because all particles within the same run have the same weight (as the COIN model resamples particles on every trial), this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Note that all particles within the same run have the same weight as the COIN model resamples particles on every trial, and so this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
