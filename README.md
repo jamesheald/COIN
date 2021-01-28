@@ -49,11 +49,11 @@ The state feedback is the perturbation plus random observation noise. In general
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. If the model was fit to adaptation data, each run can be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)). In this example, each run is assigned an equal weight as no adaptation data was provided.
+S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. If the model was fit to adaptation data, each run can be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)). In the above example, each run is assigned an equal weight as no adaptation data was provided.
 
 ### Plotting internal representations
 
-Use properties to indicate which variables to plot as well as to provide additional information needed to generate the plots (e.g. points to evaluate a distribution at). For example, to plot the distribution of the state of each context and the predicted probabilities set
+To plot specific internal representations of the COIN model, indicate which variables you want to plot using the properties. For example, to plot the distribution of the state of each context and the predicted probabilities set
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
