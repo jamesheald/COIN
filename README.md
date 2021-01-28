@@ -38,9 +38,8 @@ and run the model by calling the run_COIN method on object obj:
 ```
 This simulaton uses a default set of paramters stored in the properties of the object. The adaptation and state feedback are contained in S and can be plotted as follows:
 ```
-figure
-plot(obj.x,'k')
 hold on
+plot(obj.x,'k')
 plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
