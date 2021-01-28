@@ -50,7 +50,7 @@ The state feedback is the perturbation plus random observation noise. In general
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight.
+S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight. If the model was fit to adaptation data, each run is assigned a weight based on how well it explained the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data).
 
 ### Plotting internal representations
 
