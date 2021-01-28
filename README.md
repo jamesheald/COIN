@@ -93,7 +93,7 @@ The adaptation vector should contain one element per channel trial and the data 
 ```
 o = obj.objective_COIN;
 ```
-This method returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate to aid parameter optimisation, the number of runs used to obtain the estimate can be increased via the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid excessive runtimes). The estimate of the objective can be passed to an optimiser. An optimiser suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)) should be used.
+This method returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To reduce the variance of this estimate, which will aid parameter optimisation, the number of runs used to obtain the estimate can be increased using the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)) should be used.
 
 ### Inferring internal representations fit to adaptation data
 
