@@ -73,7 +73,7 @@ Add the names of the variables you want to store to the store property as string
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set *before* running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
+The store property must be set before running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -82,7 +82,8 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Because all particles within the same run have the same weight (the particle learning algorithm used by the COIN model resamples particles on every trial), this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Because all particles within the same run have the same weight (as the COIN model resamples particles on every trial), a simple average across particles can be computed.
+this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
