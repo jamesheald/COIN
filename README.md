@@ -93,16 +93,25 @@ This method returns a stochastic estimate of the objective. It is stochastic bec
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
+If adaptation data is available, each run of a simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal and should be used to compute a weighted average when averaging variables or distributions across runs.
+
+although they can be if the runs were recently resampled).
+
 
 ### Using adaptation data to assign weights to runs
 
 After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
 
+To examine the internal representations of the COIN model fit to adaptation data, we inferred the 944
+sequence of beliefs about the context, states and parameters, as encapsulated in the essential 945
+state vector z1:T . For each participant, this inference was conditioned on their observed adapta- 946
+tion data a1:T , their maximum likelihood COIN model parameters ϑ and the sequences of pertur- 947
+bations x⋆
+1:T and sensory cues q1:T presented to them. Thus we inferred the posterior distribution 948
+p(z1:T |a1:T , x⋆
+1:T , q1:T , ϑ).
 
-
-The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
-In a [previous section](#running-the-model), we simulated the COIN model by performing many runs on the same paradigm using the same parameters. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
-simulation by specifying the model parameters and the paradigm. 
+Some sequences of observation noise  are more probable than others based on the adaptation data of a participant. Hence, each run can be assigned a weight based on how well it explains the adaptation data. 
 
 ### Parallel computing
 
