@@ -69,7 +69,7 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 ### Storing variables
 
-Online inference can be performed without storing in memory all the past values of all variables inferred by the COIN model, and so to reduce memory requirements, the past values of variables are only stored if they need to be analysed. To store the entire trajectory of a specific variable, add the name of the variable to the store property. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing in memory all the past values of all variables inferred by the COIN model, and so to reduce memory requirements, the past values of variables are only stored if they need to be analysed. To store a specific variable on each trial, add the name of the variable to the store property. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cPost'};
 ```
