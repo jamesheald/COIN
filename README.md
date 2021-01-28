@@ -53,7 +53,7 @@ S is a cell array (one cell per run) and w is vector specifying the relative wei
 
 ### Plotting internal representations
 
-To plot specific internal representations of the COIN model, indicate which variables you want to plot using the properties. For example, to plot the distribution of the state of each context and the predicted probabilities set
+To plot specific internal representations of the COIN model, indicate which variables you want to plot using the properties. For example, to plot the distribution of the state of each context and the predicted probabilities, set the following properties:
 ```
 obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
