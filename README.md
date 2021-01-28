@@ -26,7 +26,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm (e.g. perturbations, sensory cues).
+This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm (e.g. perturbations, sensory cues). A default set of parameters are stored in the properties of the object. 
 
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
@@ -36,7 +36,7 @@ and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a structure in a cell in S:
+The adaptation and state feedback are contained in a cell in S:
 ```
 plot(S{1}.y,'m.')
 hold on
@@ -48,7 +48,7 @@ The state feedback is the perturbation plus random observation noise. In general
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-Here S is an array with one cell per run and w is vector specifying the relative weight of each run. If the model was fit to adaptation data, each run can be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)). In the above example, each run is assigned an equal weight as the adaptation property was not defined. 
+S is an array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
 
 ### Plotting internal representations
 
