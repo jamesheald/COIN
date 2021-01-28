@@ -85,7 +85,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model can be fit to adaptation data using maximum likelihood estimation. The data should be passed to the model via the adaptation property in vector form with one element per trial (use NaN on trials where adaptation has not been measured). After the model parameters and paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+The parameters of the COIN model can be fit to adaptation data using maximum likelihood estimation. The data should be passed to the model via the adaptation property and be in vector form with one element per trial (use NaN on trials where adaptation has not been measured). After the model parameters and paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
