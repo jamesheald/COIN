@@ -69,7 +69,7 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 ### Storing variables
 
-Add the names of the variables you want to store to the store property as strings. For example, to store the Kalman gains and responsibilities
+To store variables inferred by the COIN model, add the names of the variables you want to store to the store property as strings. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cPost'};
 ```
