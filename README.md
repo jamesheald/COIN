@@ -85,11 +85,11 @@ Note that all particles within the same run have the same weight as the COIN mod
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data using maximum likelihood estimation. To fit the model, first assign the data to the adaptation property:
+The parameters of the COIN model are fit to data via maximum likelihood estimation. To fit the model, first assign the data to the adaptation property:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
-The adaptation vector should contain one element per channel trial and be ordered by channel trial number. Once the paradigm and parameters have also been defined (see [Properties](#properties)), the negative log likelihood of the data (the objective to be minimised) can be estimated by calling the objective_COIN method on object obj:
+The adaptation vector should contain one element per channel trial and the data should be ordered by channel trial number. Once the paradigm and parameters have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
