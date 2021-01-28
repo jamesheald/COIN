@@ -36,14 +36,14 @@ and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a data structure in S. To plot them:
+This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a cell in S. To plot them:
 ```
 plot(S{1}.y,'m.')
 hold on
 plot(S{1}.yHat,'c')
 legend('state feedback','adaptation')
 ```
-The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
+The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
