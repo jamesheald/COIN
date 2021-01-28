@@ -38,8 +38,8 @@ and run the model by calling the run_COIN method on object obj:
 ```
 This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a data structure in S. To plot them:
 ```
-hold on
 plot(obj.x,'k')
+hold on
 plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
