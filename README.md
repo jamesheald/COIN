@@ -36,7 +36,7 @@ and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a structure in a cell in S. To plot them:
+This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a structure in a cell in S:
 ```
 plot(S{1}.y,'m.')
 hold on
