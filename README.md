@@ -89,7 +89,7 @@ The parameters of the COIN model can be fit to adaptation data using maximum lik
 ```
 o = obj.objective_COIN;
 ```
-This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
+This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
