@@ -89,22 +89,16 @@ The parameters of the COIN model are fit to data via maximum likelihood estimati
 ```
 o = obj.objective_COIN;
 ```
-This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)) should be used.
+This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Inferring internal representations fit to adaptation data
 
-Once the model has been fit to data, it is possible to use the data to infer the internal representations that generated the data. To do this, pass the data to the adaptation property and then call the run_COIN method on object obj:
-```
-obj.adaptation = randn(1,150); % random vector (for illustration)
-[S,w] = obj.run_COIN;
-```
-Each run is assigned a weight (w) based on how well it explained the adaptation data. In general, these weights will not be equal (although they can be if a resampling step was taken when the weights were last updated). When averaging across runs, these weights need to be taken into account.
+After fitting the model to data, the internal representations that generated the data can be inferred. This can be done by defining the adaptation property before calling the run_COIN method. Each run will now be assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal, although they will be if a resampling step was taken when the weights were last updated. These weights should be used to compute a weighted average when averaging across runs.
+
 
 
 The sequence of observation noise that a participant perceives is unknown. However, some sequences are more probable than others based on the adaptation data of a participant.
-
 In a [previous section](#running-the-model), we simulated the COIN model by performing many runs on the same paradigm using the same parameters. Each run was conditioned on a different random sequence of observation noise and was assigned an equal weight. If the parameters used to perform the simulation were fit to data, this data can be
-
 simulation by specifying the model parameters and the paradigm. 
 
 ### Parallel computing
