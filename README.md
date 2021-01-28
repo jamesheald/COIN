@@ -69,11 +69,11 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 ### Storing variables
 
-Online inference can be performed without storing in memory all variables inferred by the COIN model on all previous trials, and so to reduce memory requirements, variables are only stored as needed. To store variables inferred by the COIN model, add the names of the variables you want to store to the store property as strings. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing in memory all past values of all variables inferred by the COIN model, and so to reduce memory requirements, past values of variables are only stored as needed. To store the entire trajectory of a specific variable from the first trial to the last, add the name of this variable to the store property as a string. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cPost'};
 ```
-The store property must be set before running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
+This property must be set before running the model. The stored variables can be analysed after running the model. For example, the Kalman gain of the context with the highest responsibility can be computed for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -82,7 +82,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Because all particles within the same run have the same weight (as the COIN model resamples particles on every trial), the above result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Because all particles within the same run have the same weight (as the COIN model resamples particles on every trial), this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
