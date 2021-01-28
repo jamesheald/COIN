@@ -93,11 +93,11 @@ The adaptation vector should contain one element per channel trial and the data 
 ```
 o = obj.objective_COIN;
 ```
-This method returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs used to obtain the estimate using the R property (this is best done in conjunction with [Parallel Computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that is suited to a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)) should be used.
+This method returns a stochastic estimate of the objective. It is stochastic because it is derived from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs used to obtain the estimate via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that is suitable for a stochastic objective function (e.g. [BADS](https://github.com/lacerbi/bads)) should be used.
 
 ### Inferring internal representations fit to adaptation data
 
-Sometimes, the parameters used to run the COIN model were obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, the data can be used to infer the internal representations that generated the data. To utilise this information, pass the data to the adaptation property and then call the run_COIN method on object obj:
+Sometimes, the parameters used to run the COIN model are obtained by fitting the model to data (as opposed to being chosen by hand, for example). When this is the case, it is possible to use the data to infer the internal representations that generated the data. To do this, pass the data to the adaptation property and then call the run_COIN method on object obj:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 [S,w] = obj.run_COIN;
@@ -111,7 +111,7 @@ In a [previous section](#running-the-model), we simulated the COIN model by perf
 
 simulation by specifying the model parameters and the paradigm. 
 
-### Parallel Computing
+### Parallel computing
 
 It is possible to obtain better fits to data and cleaner internal representations by increasing the number of runs. However, 
 
