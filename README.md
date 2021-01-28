@@ -58,7 +58,7 @@ obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-These properties must be set before running the model so that the variables needed to generate the plots can be stored. For information on which other variables are available for plotting and how to plot them, see [Properties](#properties).
+These properties must be set before running the model so that the variables needed to generate the plots can be stored. For information on which variables are available for plotting and how to plot them, see [Properties](#properties).
 
 After running the model, call the plot_COIN method on object obj:
 ```
