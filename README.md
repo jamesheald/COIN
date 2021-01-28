@@ -44,12 +44,11 @@ plot(S{1}.y,'m.')
 plot(S{1}.yHat,'c')
 legend('perturbation','state feedback','adaptation')
 ```
-The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. You can use the R property to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
+The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. You can use the R property to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, set
 ```
 obj.R = 2;
-[S,w] = obj.run_COIN;
 ```
-S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight. If the model was fit to adaptation data, each run is assigned a weight based on how well it explained the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
+and then run the model. S is a cell array (one cell per run) and w is vector specifying the relative weight of each run. In the absence of adaptation data, each run is assigned an equal weight. If the model was fit to adaptation data, each run is assigned a weight based on how well it explained the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
 
 ### Plotting internal representations
 
