@@ -59,13 +59,13 @@ obj.xPredPlot = true; % I want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
-These properties must be set *before* running the model so that the relevant variables can be stored for plotting (online inference can be performed without storing in memory all variables on all trials, and so to reduce memory requirements, variables are only stored as needed). See [Properties](#properties) for information on how to plot other variables.
+Make sure you set these properties *before* running the model so that the relevant variables can be stored for plotting (online inference can be performed without storing in memory all variables on all trials, and so to reduce memory requirements, variables are only stored as needed). See [Properties](#properties) for information on how to plot other variables.
 
 After running the model, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-Based on the properties we set before running the model, this will generate a state | context plot and a predicted probabilities plot. The structure P contains the plotted data (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once these contexts have been relabelled, the variables to be plotted are then averaged across particles and runs. In general, using more runs will result in less variable results.
+This will generate a state | context plot and a predicted probabilities plot. The structure P contains the plotted data (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once these contexts have been relabelled, the variables to be plotted are then averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Storing variables
 
