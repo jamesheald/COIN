@@ -85,13 +85,16 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data via maximum likelihood estimation. The data should be in vector form with one element per trial (use NaN on trials where adaptation is not measured). Pass the data to the model via the adaptation property. After the model parameters and paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+The parameters of the COIN model are fit to data via maximum likelihood estimation. To fit the model to data, pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation is not measured). After the model parameters and paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
 This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid prohibitively long runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
 
-### Inferring internal representations fit to adaptation data
+### Inferring internal representations of the COIN model fit to adaptation data
+
+
+### Using adaptation data to assign weights to runs
 
 After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
 
