@@ -38,11 +38,10 @@ and run the model by calling the run_COIN method on object obj:
 ```
 This uses a default set of parameters stored in the properties of the object. The adaptation and state feedback are contained in a data structure in S. To plot them:
 ```
-plot(obj.x,'k')
-hold on
 plot(S{1}.y,'m.')
+hold on
 plot(S{1}.yHat,'c')
-legend('perturbation','state feedback','adaptation')
+legend('state feedback','adaptation')
 ```
 The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs, call
 ```
