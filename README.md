@@ -81,15 +81,19 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-Note that all particles within the same run have the same weight as the COIN model resamples particles on every trial, and so this result can be averaged across particles on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+This result can be averaged across particles on each trial as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data via maximum likelihood estimation. First assign the data to the adaptation property:
+The parameters of the COIN model are fit to data via maximum likelihood estimation. Use the adaptation property to define the data. Adaptation should be a vector (use NaN if no measure of adaptation was obtained on a trial).
+
+First assign the data to the adaptation property:
 ```
 obj.adaptation = randn(1,150); % random vector (for illustration)
 ```
 this needs to be more general for fitting VMR without channels!!!
+
+the adaptation vector should have one element per trial
 
 The length of this vector should be equal to the number of channel trials and element
 The adaptation vector should contain one scalar data point per channel trial and the data should be arranged in the same order as the corresponding channel trials. After the parameters of the model and the paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
