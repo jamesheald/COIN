@@ -96,32 +96,11 @@ This returns a stochastic estimate of the objective, which can be passed to an o
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the class object via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
+When performing multiple runs of a simulation based on parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the class object via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
 
 ### Parallel computing
 
-Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs of a simulation. If multiple runs are performed in series (using a for loop), the runtime scales linearly with the number of runs. To reduce the runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores that are available via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
-
-### Using adaptation data to assign weights to runs
-
-After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be, as if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
-
-To examine the internal representations of the COIN model fit to adaptation data, we inferred the 944
-sequence of beliefs about the context, states and parameters, as encapsulated in the essential 945
-state vector z1:T . For each participant, this inference was conditioned on their observed adapta- 946
-tion data a1:T , their maximum likelihood COIN model parameters ϑ and the sequences of pertur- 947
-bations x⋆
-1:T and sensory cues q1:T presented to them. Thus we inferred the posterior distribution 948
-p(z1:T |a1:T , x⋆
-1:T , q1:T , ϑ).
-
-Some sequences of observation noise  are more probable than others based on the adaptation data of a participant. Hence, each run can be assigned a weight based on how well it explains the adaptation data. 
-
-### Integrating out observation noise
-The basic simulation above have performed inference conditioned on a random sequence of observation noise.
-We can repeat the simulation multiple times (each based on a different sequence of observation noise) using the property *R*. For example, to run 2 simulations, call
-The output of each and each simulation, or run, is assigned a weight (*w*). In the absence of behavioural adaptation data, all runs are assigned equal weight. If we pass adaptation data via the adaptation property
-The more simulations we perform (the greater R is), the greater the computational complexity. If you have access to a computer cluster, you can perform each simulation in parallel, which will speed things up. To do this, specify the maximum number of CPU cores you have access to via the property *maxCores*.
+Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs of a simulation. If these runs are performed in series (using a for loop), the runtime scales linearly with the number of runs. To reduce the runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores that are available via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
 
 ### Properties
 
