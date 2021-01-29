@@ -26,7 +26,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has a number of [properties](#properties) that define the model (e.g. number of particles, model parameters) and the paradigm (e.g. perturbations, sensory cues). Some of these properties have default values, which can be overwritten.
+This object has a number of [properties](#properties) that define the model (e.g., number of particles, model parameters) and the paradigm (e.g., perturbations, sensory cues). Some of these properties have default values, which can be overwritten.
 
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
@@ -92,7 +92,7 @@ To fit the COIN model to data using maximum likelihood estimation, define the mo
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g., [BADS](https://github.com/lacerbi/bads)).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
@@ -100,7 +100,7 @@ When performing multiple runs of a simulation using parameters that were fit to 
 
 ### Parallel computing
 
-Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs of a simulation. If runs are performed in series (using a for loop), the runtime scales linearly with the number of runs, which may be prohibitive if the number of runs is large. To reduce the runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores available via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
+Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs of a simulation. If runs are performed in series (using a for loop), the runtime scales linearly with the number of runs, which may be prohibitive if the number of runs is large. To reduce the runtime, each run can be performed in parallel across multiple CPU cores (e.g., on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores available via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
 
 ### Properties
 
