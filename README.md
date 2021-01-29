@@ -86,7 +86,7 @@ end
 ```
 This result can be averaged across particles on each trial as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
-### Fitting the model to data
+### Fitting the COIN model to data
 
 To fit the COIN model to data using maximum likelihood estimation, define the model parameters under evaluation (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
