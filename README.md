@@ -85,11 +85,11 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-The parameters of the COIN model are fit to data using maximum likelihood estimation. The data should be passed to the model via the adaptation property in vector form with one element per trial (use NaN on trials where adaptation has not been measured). After the model parameters and paradigm have been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+The parameters of the COIN model are fit to data using maximum likelihood estimation. The data should be passed to the model via the adaptation property and be in vector form with one element per trial (use NaN on trials where adaptation has not been measured). After the model parameters and paradigm have also been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
-This method returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to prevent unacceptable runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective. It is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). The estimate of the objective can be passed to an optimiser. An optimiser that can handle a stochastic objective function should be used (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
