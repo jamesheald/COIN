@@ -88,7 +88,7 @@ This result can be averaged across particles on each trial, as all particles wit
 
 ### Fitting the model to data
 
-To find the maximum likelihood estimate of parameters, the negative log probability of the data must be evaluated for each candidate set of parameters. To do this, first define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
+To find the maximum likelihood estimate of parameters, the negative log probability of the data must be evaluated for each candidate setting of the parameters. First define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
