@@ -44,9 +44,9 @@ hold on
 plot(S{1}.yHat,'c')
 legend('state feedback','adaptation')
 ```
-### Integrating out observation noise
+### Averaging over observation noise
 
-The actual observation noise that a participant will perceive is unknown. Hence, rather than performing a single simulation conditioned on one particular noise sequence, multiple runs of the simulation can be performed, each conditioned on a different noise sequence. The inferences associated with these runs can then be averaged. Use the R property to specify the number of runs to perform. For example, to perform 2 runs:
+The actual observation noise that a participant perceives is unknown. Hence, rather than performing one run of the simulation conditioned on a particular noise sequence, multiple runs of the simulation can be performed, each conditioned on a different noise sequence. The inferences associated with each of these runs can then be averaged. Use the R property to specify the number of runs to perform. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
