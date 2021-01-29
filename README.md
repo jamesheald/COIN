@@ -36,7 +36,7 @@ and run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-The adaptation and state feedback are contained in a cell in S. To plot them:
+The adaptation and state feedback (perturbation plus random observation noise) are contained in a cell in S. To plot them:
 ```
 figure
 plot(S{1}.y,'m.')
@@ -45,7 +45,7 @@ plot(S{1}.yHat,'c')
 legend('state feedback','adaptation')
 ```
 ### Integrating out observation noise
-The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs:
+The actual observation noise that a participant perceives is unknown. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
