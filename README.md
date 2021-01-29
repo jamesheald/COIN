@@ -60,11 +60,11 @@ obj.cPredPlot = true; % I want to plot the predicted probabilities
 ```
 These properties must be set before running the model so that the variables needed to generate the plots can be stored. For information on which variables are available for plotting and how to plot them, see [Properties](#properties).
 
-After running the model, call the plot_COIN method on object obj:
+After the model has been run, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once these contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
+This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Storing variables
 
