@@ -96,11 +96,11 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal, although they can be as weights are reset when runs are resampled in particle filtering. To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. Use the resultant weights to average inferences across runs.
+When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. Use the resultant weights to average inferences across runs.
 
 ### Using adaptation data to assign weights to runs
 
-After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
+After fitting the model to data, the internal representations that generated the data can be inferred from the data. This can be done by defining the adaptation property before calling the run_COIN method. This will result in each run being assigned a weight based on how well it explains the adaptation data. In general, these weights will not be equal (although they can be, as if the runs were recently resampled). When averaging variables or distributions across runs, these weights should be used to compute a weighted average.
 
 To examine the internal representations of the COIN model fit to adaptation data, we inferred the 944
 sequence of beliefs about the context, states and parameters, as encapsulated in the essential 945
