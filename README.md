@@ -88,7 +88,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the COIN model to data
 
-To fit the COIN model to data using maximum likelihood estimation, define the model parameters under evaluation (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
+To fit the COIN model to data using maximum likelihood estimation, define the model parameters being evaluated (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
@@ -97,6 +97,15 @@ This returns a stochastic estimate of the objective, which can be passed to an o
 ### Inferring internal representations of the COIN model fit to adaptation data
 
 When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
+
+### Parallel computing
+
+It is possible to obtain better fits to data and cleaner internal representations by increasing the number of runs. However, 
+
+The computational complexity of the COIN model scales linearly with the number of runs. To reduce runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
+
+This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
+
 
 ### Using adaptation data to assign weights to runs
 
@@ -112,14 +121,6 @@ p(z1:T |a1:T , x⋆
 1:T , q1:T , ϑ).
 
 Some sequences of observation noise  are more probable than others based on the adaptation data of a participant. Hence, each run can be assigned a weight based on how well it explains the adaptation data. 
-
-### Parallel computing
-
-It is possible to obtain better fits to data and cleaner internal representations by increasing the number of runs. However, 
-
-The computational complexity of the COIN model scales linearly with the number of runs. To reduce runtime, each run can be performed in parallel across multiple CPU cores (e.g. on a computer cluster). To engage parallel processing, use the maxCores property to specify the maximum number of CPU cores available for use. The default setting of maxCores is 0, which implements serial processing.
-
-This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 
 ### Integrating out observation noise
 The basic simulation above have performed inference conditioned on a random sequence of observation noise.
