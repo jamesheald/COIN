@@ -44,12 +44,13 @@ hold on
 plot(S{1}.yHat,'c')
 legend('state feedback','adaptation')
 ```
+### Integrating out observation noise
 The state feedback is the perturbation plus random observation noise. In general, the actual observation noise that a participant perceives is unknown to us. The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
+S is a cell array with one cell per run and w is vector specifying the relative weight of each run. Here each run is assigned an equal weight. However, if adaptation data is passed to the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
 
 ### Plotting internal representations
 
