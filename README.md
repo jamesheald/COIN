@@ -88,7 +88,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-To fit the COIN model to data using maximum likelihood estimation, define the model parameters being evaluated (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
+To fit the COIN model to data using maximum likelihood estimation, define the model parameters under evaluation (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
@@ -96,7 +96,7 @@ This returns a stochastic estimate of the objective, which can be passed to an o
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. Use the resultant weights to average inferences across runs.
+When performing multiple runs of a simulation using parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
 
 ### Using adaptation data to assign weights to runs
 
