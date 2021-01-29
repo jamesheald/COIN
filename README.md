@@ -72,7 +72,7 @@ Online inference can be performed without storing all the past values of all var
 ```
 obj.store = {'k','cPost'};
 ```
-This property must be set before running the model. The stored variables can be analysed after running the model. For example, to compute the Kalman gain of the context with the highest responsibility for each particle on each trial:
+This property must be set before running the model. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
