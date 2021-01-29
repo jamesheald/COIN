@@ -46,12 +46,12 @@ legend('state feedback','adaptation')
 ```
 ### Integrating out observation noise
 
-The actual observation noise that a participant perceives is unknown. Hence, rather than performing a single run of the simulation conditioned on a particular noise sequence, multiple runs can be performed, each conditioned on a different noise sequence. The inferences associated with these runs can then be averaged. Use the R property to specify the number of runs to perform. For example, to perform 2 runs:
+The actual observation noise that a participant perceives is unknown. Hence, rather than performing a single run of a simulation conditioned on a particular noise sequence, multiple runs can be performed, each conditioned on a different noise sequence. The inferences associated with these runs can then be averaged. Use the R property to specify the number of runs to perform. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array with one cell per run and w is vector specifying the relative weight of each run. Here, each run is assigned an equal weight. However, if adaptation data is passed to the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
+S is a cell array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
 
 ### Plotting internal representations
 
