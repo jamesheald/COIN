@@ -92,7 +92,7 @@ To fit the COIN model to data using maximum likelihood estimation, define the mo
 ```
 o = obj.objective_COIN;
 ```
-This returns a stochastic estimate of the objective, which can be passed to an optimiser. This estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g. [BADS](https://github.com/lacerbi/bads)).
+This returns a stochastic estimate of the objective, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of this estimate can be reduced by increasing the number of runs via the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid unacceptable runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g. [BADS](https://github.com/lacerbi/bads)).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
