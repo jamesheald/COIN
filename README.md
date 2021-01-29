@@ -96,7 +96,7 @@ This returns a stochastic estimate of the objective. It is stochastic because it
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-After fitting the model to data, each run of a simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal. If they are equal, this is not a problem, as weights are reset when runs are resampled during particle filtering. To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. The resultant weights should be used to compute a weighted average of variables or distributions of interest across runs.
+After fitting the model to data, each run of a simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal. However, they can be equal, as weights are reset whenever runs are resampled during particle filtering. To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the model via the adaptation property and call the run_COIN method. The resultant weights should be used to compute a weighted average of variables or distributions of interest across runs.
 
 ### Using adaptation data to assign weights to runs
 
