@@ -88,7 +88,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-To fit the COIN model to data using maximum likelihood estimation, the negative log probability of the data must be calculated given a set of parameters. To caculate the negative log likelihood, first define the model parameters and the paradigm (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). After the model parameters and paradigm have also been defined (see [Properties](#properties)), the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+To fit the COIN model to data using maximum likelihood estimation, the negative log probability of the data is calculated given a set of parameters. First define the model parameters and paradigm (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
