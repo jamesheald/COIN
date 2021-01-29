@@ -67,7 +67,7 @@ After the model has been run, call the plot_COIN method on object obj:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
-This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
+This will generate the desired plots: a state | context plot and a predicted probabilities plot. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Storing variables
 
@@ -88,7 +88,7 @@ This result can be averaged across particles on each trial as all particles with
 
 ### Fitting the model to data
 
-To fit the COIN model to data using maximum likelihood estimation, define the model parameters and paradigm (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). Then the negative log likelihood of the data can be estimated by calling the objective_COIN method on object obj:
+To fit the COIN model to data using maximum likelihood estimation, define the model parameters and paradigm (see [Properties](#properties)) and pass the data to the model via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
