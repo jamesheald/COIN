@@ -86,9 +86,11 @@ end
 ```
 This result can be averaged across particles on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
-### Fitting the COIN model to data
+### Evaluating the log likelihood
 
-To fit the COIN model to data using maximum likelihood estimation, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
+To fit the COIN model to data using maximum likelihood estimation, the log likelihood must be evaluated for each candidate a set a parameters.
+
+define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
