@@ -38,6 +38,7 @@ and run the model by calling the run_COIN method on object obj:
 ```
 The adaptation and state feedback are contained in a cell in S. To plot them:
 ```
+figure
 plot(S{1}.y,'m.')
 hold on
 plot(S{1}.yHat,'c')
