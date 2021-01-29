@@ -100,7 +100,7 @@ When performing multiple runs of a simulation using parameters fit to data, each
 
 ### Parallel computing
 
-It is possible to obtain lower variance estimates of the log likelihood and less-noisy internal representations by increasing the number of runs of a simulation. However, if multiple runs are performed in series (using a for loop), the runtime scales linearly with the number of runs. To reduce the runtime, each run can be performed in parallel (e.g. across multiple CPU cores on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores available for use via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
+Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs of a simulation. However, if multiple runs are performed in series (using a for loop), the runtime scales linearly with the number of runs. To reduce the runtime, each run can be performed in parallel (e.g. across multiple CPU cores on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores available for use via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
 
 This simulation performed inference based on a single sample of the observation noise, which transforms the perturbation into the state feedback. 
 
