@@ -46,7 +46,7 @@ legend('state feedback','adaptation')
 ```
 ### Integrating out observation noise
 
-The actual observation noise that a participant perceives is unknown. Therefore, rather than performing a single run of the simulation conditioned on a random sequence of observation noise, multiple runs can be performed&mdash;each conditioned on a different random sequence of observation noise. The internal representations and motor output associated with these runs can then be averaged.
+The actual observation noise that a participant perceives is unknown. Hence, rather than performing a single run of the simulation conditioned on a random noise sequence, multiple runs can be performed, each conditioned on a different random noise sequence. The inferences associated with these runs can then be averaged.
 
 
 The R property can be used to perform multiple runs of the simulation&mdash;each conditioned on a different random sequence of observation noise. For example, to perform 2 runs:
