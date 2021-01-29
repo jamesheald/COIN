@@ -88,12 +88,7 @@ This result can be averaged across particles on each trial, as all particles wit
 
 ### Fitting the model to data
 
-To find the maximum likelihood estimate of parameters, the log probability of the data given parameters (log likelihood) is evaluated.
-
-
-To perform maximum likelihood estimation of parameters, the log likelihood must be evaluated for a set a parameters.
-
-define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
+To find the maximum likelihood estimate of parameters, the log probability of the data given parameters (log likelihood) must evaluated. First define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property; the data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The negative log likelihood of the data can then be estimated by calling the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
