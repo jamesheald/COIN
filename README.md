@@ -10,11 +10,11 @@ The COIN model requires installation of the following packages to improve the ef
 - "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh. To compile the necessary mex files, run make.m.
 - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 
-Add each package to the MATLAB search path using 
+Add each package to the MATLAB search path: 
 ```
 addpath(genpath('directory'))
 ```
-where 'directory' is the full path to the root folder of the package.
+Here 'directory' is the full path to the root folder of the package.
 
 ## The model
 
