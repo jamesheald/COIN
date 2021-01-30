@@ -6,8 +6,8 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
 The COIN model requires installation of the following packages to improve the efficiency of the code:
 
-- "[Lightspeed matlab toolbox](https://github.com/tminka/lightspeed)" by Tom Minka. Run install_lightspeed.m to compile the necessary mex files.
-- "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh. Run make.m to compile the necessary mex files.
+- "[Lightspeed matlab toolbox](https://github.com/tminka/lightspeed)" by Tom Minka. To compile the necessary mex files, run install_lightspeed.m.
+- "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh. To compile the necessary mex files, run make.m.
 - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 
 Add each package to the MATLAB search path using 
