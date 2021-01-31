@@ -104,7 +104,7 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 
 ### Variable names
 
--dynSS1
+- dynSS1
 -dynSS2
 -obsSS1
 -obsSS2
