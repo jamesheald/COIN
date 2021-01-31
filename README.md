@@ -113,7 +113,7 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 - nE
 - beta
 - betaE
-- a
+- a - retention factor
 - d
 - pQ
 - pY
