@@ -108,7 +108,7 @@ The time it takes to execute multiple runs of a simulation scales linearly with 
 
 To reduce the runtime, runs can be performed in parallel across different CPU cores (e.g., on a computer cluster). 
 
-The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute runs in parallel (e.g., across multiple CPU cores on a computer cluster), and thus reduce the runtime, specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0&mdash;this executes runs in series.
+The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute runs in parallel (e.g., across multiple CPU cores on a computer cluster), specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes runs in series.
 
 ### Properties
 
