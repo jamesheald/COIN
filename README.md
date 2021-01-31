@@ -94,7 +94,7 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
-When multiple runs of a simulation are performed with parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled in particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the class object via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
+When multiple runs of a simulation are performed with parameters fit to data, each run of the simulation can be assigned a weight based on how well it explains the data. In general, these weights will not be equal (although they can be, as weights are reset when runs are resampled during particle filtering). To generate a set of weighted runs, set the model parameters to their maximum likelihood estimates, pass the data to the class object via the adaptation property and call the run_COIN method. The resultant weights should be used to average inferences across runs.
 
 ### Parallel computing
 
