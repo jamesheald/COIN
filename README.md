@@ -71,13 +71,13 @@ This will generate the desired plots&mdash;a state | context plot and a predicte
 
 Online inference can be performed without storing all the past values of all variables inferred by the COIN model. Hence, to reduce memory requirements, the past values of variables are only stored if needed for later analysis. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
 ```
-obj.store = {'k','cPost'};
+obj.store = {'k','cResp'};
 ```
 This property must be set before running the model. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility for each particle on each trial:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
-        [~,j] = max(S{1}.cPost(:,particle,trial));
+        [~,j] = max(S{1}.cResp(:,particle,trial));
         k(particle,trial) = S{1}.k(j,particle,trial);
     end
 end
@@ -111,7 +111,7 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 - bSS1 - sufficient statistic #1 for the bias parameter
 - bSS2 - sufficient statistic #2 for the bias parameter
 - cPred - predicted probabilities
-- cPost - responsibilities
+- cResp - responsibilities
 - cInf - stationary probabilities
 - c - context sampled
 - iResamp - indices of resampled particles
