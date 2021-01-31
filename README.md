@@ -106,10 +106,10 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 
 
 
-- dynSS1 - sufficient statistic 1 for the retention and drift parameters
-- dynSS2 - sufficient statistic 2 for the retention and drift parameters
-- obsSS1 - sufficient statistic 1 for the bias parameter
-- obsSS2 - sufficient statistic 2 for the bias parameter
+- dynSS1 - sufficient statistic #1 for the retention and drift parameters
+- dynSS2 - sufficient statistic #2 for the retention and drift parameters
+- obsSS1 - sufficient statistic #1 for the bias parameter
+- obsSS2 - sufficient statistic #2 for the bias parameter
 - cPred - predicted probabilities
 - cPost - responsibilities
 - cInf - stationary probabilities
