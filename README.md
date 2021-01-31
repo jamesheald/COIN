@@ -105,9 +105,6 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 ### Variable names
 
 
-adMu','adCovar'
-bMu','bVar'}
-  xPredMarg bPredMarg  yPredMarg'   'xHat'  'explicit' 'implicit'  'c','iResamp'}
 
 - dynSS1
 - dynSS2
@@ -116,10 +113,16 @@ bMu','bVar'}
 - cPred - predicted probabilities
 - cPost - responsibilities
 - cInf - stationary probabilities
+- c - context sampled
+- iResamp - indices of resampled particles
+- explicit - explicit component of learning
+- implicit - implicit component of learning
 - transitionMatrix - expected value of the context transition matrix
 - emissionMatrix - expected value of the cue emission matrix
-- adMu - 
-- adCovar - 
+- adMu - mean of the posterior of the retention and drift in each context
+- adCovar - covariance of the posterior of the retention and drift in each context
+- bMu - mean of the posterior of the bias in each context
+- bVar - variance of the posterior of the bias in each context
 - xPred - mean of the predictive distribution of the state in each context 
 - vPred - variance of the predictive distribution of the state in each context 
 - xFilt - mean of the filtered distribution of the state in each context 
@@ -138,6 +141,9 @@ bMu','bVar'}
 - yPred - state feedback predicted in each context
 - xHat - state predicted (average across contexts and particles)
 - yHat - state feedback predicted (average across contexts and particles)
+- xPredMarg - predicted state (marginal distribution)
+- bPredMarg - bias (marginal distribution)
+- yPredMarg - predicted state feedback (marginal distribution)
 - p - variance of state feedback predicted in each context
 - e - state feedback prediction error in each context
 - sensoryNoise - sensory noise
