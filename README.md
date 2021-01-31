@@ -106,10 +106,10 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 
 
 
-- dynSS1
-- dynSS2
-- obsSS1
-- obsSS2
+- dynSS1 - sufficient statistic 1 for the retention and drift parameters
+- dynSS2 - sufficient statistic 2 for the retention and drift parameters
+- obsSS1 - sufficient statistic 1 for the bias parameter
+- obsSS2 - sufficient statistic 2 for the bias parameter
 - cPred - predicted probabilities
 - cPost - responsibilities
 - cInf - stationary probabilities
@@ -134,6 +134,7 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 - betaE - global emission distribution
 - a - retention in each context
 - d - drift in each context
+- b - bias in each context
 - pQ - probability of the observed cue in each context
 - pY - probability of the observed state feedback in each context
 - cPrior - probability of each context transition given the context sampled on the previous trial
@@ -150,10 +151,9 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 - motorNoise - motor noise
 - k - Kalman gain in each context
 - xSamp
-- m
-- mE
-- Q
-- b
+- m - number of tables in restaurant i serving dish j (Chinese restaurant franchise for the context transitions)
+- mE - number of tables in restaurant i serving dish j (Chinese restaurant franchise for the cue emissions)
+- Q - number of cues observed so far
 - iX
 - cuesExist % doesnt change
 - h % doesnt change
