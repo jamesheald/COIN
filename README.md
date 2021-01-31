@@ -73,7 +73,7 @@ Online inference can be performed without storing all of the past values of all 
 ```
 obj.store = {'k','cFilt'};
 ```
-This property must be set before running the model. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility for each particle on each trial:
+This property must be set before running the model. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
@@ -82,7 +82,7 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-A simple average across particles gives the final result on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
