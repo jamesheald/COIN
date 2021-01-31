@@ -104,31 +104,45 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 
 ### Variable names
 
+
+adMu','adCovar'
+bMu','bVar'}
+  xPredMarg bPredMarg  yPredMarg'   'xHat'  'explicit' 'implicit'  'c','iResamp'}
+
 - dynSS1
 - dynSS2
 - obsSS1
 - obsSS2
-- C
-- n
-- nE
-- beta
-- betaE
-- a - retention factor
-- d
-- pQ
-- pY
-- cPrior
-- cPrev
-- yPred
-- xHat
-- yHat
-- p
-- e
-- sensoryNoise
-- motorNoise
-- k
-- xFilt
-- vFilt
+- cPred - predicted probabilities
+- cPost - responsibilities
+- cInf - stationary probabilities
+- transitionMatrix - expected value of the context transition matrix
+- emissionMatrix - expected value of the cue emission matrix
+- adMu - 
+- adCovar - 
+- xPred - mean of the predictive distribution of the state in each context 
+- vPred - variance of the predictive distribution of the state in each context 
+- xFilt - mean of the filtered distribution of the state in each context 
+- vFilt - variance of the filtered distribution of the state in each context 
+- C - number of instantiated contexts
+- n - context transition counts
+- nE - cue emission counts
+- beta - global transition distribution
+- betaE - global emission distribution
+- a - retention in each context
+- d - drift in each context
+- pQ - probability of the observed cue in each context
+- pY - probability of the observed state feedback in each context
+- cPrior - probability of each context transition given the context sampled on the previous trial
+- cPrev - context sampled on the previous trial
+- yPred - state feedback predicted in each context
+- xHat - state predicted (average across contexts and particles)
+- yHat - state feedback predicted (average across contexts and particles)
+- p - variance of state feedback predicted in each context
+- e - state feedback prediction error in each context
+- sensoryNoise - sensory noise
+- motorNoise - motor noise
+- k - Kalman gain in each context
 - xSamp
 - m
 - mE
