@@ -104,45 +104,45 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 
 ### Variable names
 
-- 'dynSS1'
-- 'dynSS2'
-'obsSS1'
-'obsSS2'
-'C'
-'n'
-'nE'
-'beta'
-'betaE'
-'a'
-'d'
-'pQ'
-'pY'
-'cPrior'
-'cPrev'
-'yPred'
-'xHat'
-'yHat'
-'p'
-'e'
-'sensoryNoise'
-'motorNoise'
-'k'
-'xFilt'
-'vFilt'
-'xSamp'
-'m'
-'mE'
-'Q'
-'b'
-'iX'
-'cuesExist' % doesnt change
-'h' % doesnt change
-'channel' % vector doesnt change
-'observeY' % vector doesnt change
-'xPrev'
-'vPrev'
-'xPrevSamp'
-'xSampOld'
+-dynSS1
+-dynSS2
+-obsSS1
+-obsSS2
+-C
+-n
+-nE
+-beta
+-betaE
+-a
+-d
+-pQ
+-pY
+-cPrior
+-cPrev
+-yPred
+-xHat
+-yHat
+-p
+-e
+-sensoryNoise
+-motorNoise
+-k
+-xFilt
+-vFilt
+-xSamp
+-m
+-mE
+-Q
+-b
+-iX
+-cuesExist % doesnt change
+-h % doesnt change
+-channel % vector doesnt change
+-observeY % vector doesnt change
+-xPrev
+-vPrev
+-xPrevSamp
+-xSampOld
 
 
 
