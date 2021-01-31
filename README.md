@@ -113,7 +113,7 @@ The time it takes to execute multiple runs of a simulation in series (using a fo
 - cPred - predicted probabilities
 - cResp - responsibilities
 - cInf - stationary probabilities
-- c - context sampled
+- c - sampled context
 - iResamp - indices of resampled particles
 - explicit - explicit component of learning
 - implicit - implicit component of learning
