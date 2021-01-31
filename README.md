@@ -98,7 +98,17 @@ When multiple runs of a simulation are performed with parameters fit to data, ea
 
 ### Parallel computing
 
-Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs via the R property. If runs are performed in series (using a for loop), the runtime scales linearly with the number of runs, which may be prohibitive if the number of runs is large. To reduce the runtime, each run can be performed in parallel across multiple CPU cores (e.g., on a computer cluster). To engage parallel processing, specify the maximum number of CPU cores available via the maxCores property. The default setting of maxCores is 0, which implements serial processing.
+Lower variance estimates of the log likelihood and less-noisy internal representations can be obtained by increasing the number of runs via the R property. 
+
+If runs are performed in series (using a for loop), the runtime scales linearly with the number of runs, which may be prohibitive if the number of runs is large. 
+
+, which may be prohibitive if the number of runs is larg
+
+The time it takes to execute multiple runs of a simulation scales linearly with the number of runs. Hence, 
+
+To reduce the runtime, runs can be performed in parallel across different CPU cores (e.g., on a computer cluster). 
+
+The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute runs in parallel (e.g., across multiple CPU cores on a computer cluster), and thus reduce the runtime, specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0&mdash;this executes runs in series.
 
 ### Properties
 
