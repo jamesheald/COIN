@@ -55,11 +55,11 @@ S is a cell array with one cell per run and w is vector specifying the relative 
 
 To plot specific variables or distributions, activate the relevant plot flags in the properties of the class object. If plotting a continuous distribution, also specify the points at which to evaluate the distribution. For example, to plot the distribution of the state of each context and the predicted probabilities:
 ```
-obj.xPredPlot = true; % I want to plot the state | context
+obj.xPredPlot = true; % i want to plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
-obj.cPredPlot = true; % I want to plot the predicted probabilities
+obj.cPredPlot = true; % i want to plot the predicted probabilities
 ```
-These properties must be set before running the model so that the variables needed to generate the plots can be stored. For information on which variables are available for plotting and how to plot them, see [Properties](#properties).
+These properties must be set before running the model so that the necessary variables can be stored. For more information on which variables can be plotted and how to plot them, see [Properties](#properties).
 
 After the model has been run, call the plot_COIN method on object obj:
 ```
