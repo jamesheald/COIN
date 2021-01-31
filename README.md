@@ -82,7 +82,8 @@ for trial = 1:numel(obj.x) % loop over trials
     end
 end
 ```
-The result for each trial is obtained by a simple average across particles, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+Thre result can be averaged across particles on each trial, 
+The result for each trial is a simple average across particles, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Fitting the model to data
 
