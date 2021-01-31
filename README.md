@@ -44,7 +44,7 @@ legend('state feedback','adaptation')
 ```
 ### Integrating out observation noise
 
-The actual observation noise that a participant perceives is unknown. Therefore, rather than performing a single run of a simulation conditioned on one particular noise sequence, multiple runs of the simulation can be performed, each conditioned on a different noise sequence. The observation noise can then be integrated out by computing the average value of each inferred variable across runs. To specify the number of runs to perform, use the R property. For example, to perform 2 runs:
+The actual observation noise that a participant perceives is unknown. Therefore, rather than performing a single run of a simulation conditioned on one particular noise sequence, multiple runs of the simulation can be performed, each conditioned on a different noise sequence. The observation noise can then be integrated out by computing the average value of each variable inferred by the COIN model across runs. To specify the number of runs to perform, use the R property. For example, to perform 2 runs:
 ```
 obj.R = 2;
 [S,w] = obj.run_COIN;
@@ -69,7 +69,7 @@ This will generate the desired plots&mdash;a state | context plot and a predicte
 
 ### Storing variables
 
-Online inference can be performed without storing all of the past values of all variables inferred by the COIN model. Hence, to reduce memory requirements, the past values of variables are only stored if they will be needed for later analysis. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing all of the past values of all inferred variables. Hence, to reduce memory requirements, the past values of variables are only stored if they will be needed for later analysis. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cFilt'};
 ```
