@@ -98,7 +98,7 @@ When multiple runs of a simulation are performed using parameters fit to data, e
 
 ### Parallel computing
 
-The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), specify the maximum number of CPU cores available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series.
+The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), specify the maximum number of CPU cores available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series.
 
 ### Properties
 
