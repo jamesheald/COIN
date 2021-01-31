@@ -61,7 +61,7 @@ obj.cPredPlot = true; % i want to plot the predicted probabilities
 ```
 These properties must be set before running the model so that the necessary variables can be stored. For a list of which variables can be plotted and how to plot them, see [Properties](#properties).
 
-After the model has been run, call the plot_COIN method on object obj:
+After the model has been run, call the plot_COIN method:
 ```
 [P,S] = obj.plot_COIN(S,w);
 ```
@@ -86,7 +86,7 @@ This result can be averaged across particles on each trial, as all particles wit
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The objective_COIN method can then be called on object obj:
+The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The objective_COIN method can then be called:
 ```
 o = obj.objective_COIN;
 ```
