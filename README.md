@@ -26,6 +26,8 @@ obj = COIN;
 ```
 This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten.
 
+The class is also associated with methods (functions) that can operate on data in the object properties.
+
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)]; % spontaneous recovery paradigm
