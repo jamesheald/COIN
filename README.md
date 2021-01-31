@@ -86,7 +86,7 @@ This result can be averaged across particles on each trial, as all particles wit
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). Call the objective_COIN method on object obj:
+The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). Then call the objective_COIN method on object obj:
 ```
 o = obj.objective_COIN;
 ```
@@ -98,7 +98,7 @@ When multiple runs of a simulation are performed with parameters fit to data, ea
 
 ### Parallel computing
 
-The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute the runs in parallel (e.g., across multiple CPU cores on a computer cluster), specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes runs in series.
+The time it takes to execute multiple runs of a simulation in series (using a for loop) can be prohibitively long if the number of runs is large. To execute runs in parallel (e.g., across multiple CPU cores on a computer cluster), specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes runs in series.
 
 ### Properties
 
