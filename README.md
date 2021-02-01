@@ -178,7 +178,7 @@ b                % bias in each context
 beta             % global transition distribution
 betaE            % global emission distribution  
 bMu              % mean of the posterior of the bias in each context
-bPredMarg        % bias (marginal distribution)
+bPredMarg        % bias (marginal distribution, discretised)
 bSS1             % sufficient statistic #1 for the bias parameter
 bSS2             % sufficient statistic #2 for the bias parameter
 bVar             % variance of the posterior of the bias in each context
@@ -214,13 +214,13 @@ vPrev            % variance of the filtered distribution of the state in each co
 xFilt            % mean of the filtered distribution of the state in each context 
 xHat             % state predicted (average across contexts and particles)
 xPred            % mean of the predictive distribution of the state in each context 
-xPredMarg        % predicted state (marginal distribution)
+xPredMarg        % predicted state (marginal distribution, discretised)
 xPrev            % mean of the filtered distribution of the state in each context on previous trial
 xPrevSamp        % state sampled on the previous trial (used to update the sufficient statistics for the retention and drift parameters)
 xSamp            % state sampled on the current trial (used to update the sufficient statistics for the bias parameter)
 xSampOld         % state sampled on the current trial (used to update the sufficient statistics for the retention and drift parameters)
 yHat             % state feedback predicted (average across contexts and particles)
 yPred            % state feedback predicted in each context
-yPredMarg        % predicted state feedback (marginal distribution)
+yPredMarg        % predicted state feedback (marginal distribution, discretised)
 ```
 
