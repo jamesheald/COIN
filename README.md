@@ -130,7 +130,7 @@ kappa                                     % kappa (self-transition) hyperparamet
 H                                         % matrix of context-dependent observation vectors (set later)
 
 % paradigm
-x                                         % vector of (noiseless) perturbations (NaN indicates a channel trial)
+x                                         % vector of (noiseless) perturbations (NaN if channel trial)
 q                                         % vector of sensory cues (if any)
 cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
 T                                         % total number of trials (set later based on the length of x)
@@ -139,7 +139,7 @@ observeY                                  % is the state feedback observed or no
 eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
 
 % measured adaptation data
-adaptation                                % vector of adaptation data (NaN if not measured)
+adaptation                                % vector of adaptation data (NaN if adaptation not measured)
 
 % store
 store                                     % variables to store in memory
