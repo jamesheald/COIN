@@ -84,6 +84,8 @@ end
 ```
 A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
+note that xpred, vpred and cpred are stored before resampling!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ### Fitting the model to data
 
 The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The objective_COIN method can then be called:
@@ -220,7 +222,5 @@ xSampOld         % state sampled on the current trial (used to update the suffic
 yHat             % state feedback predicted (average across contexts and particles)
 yPred            % state feedback predicted in each context
 yPredMarg        % predicted state feedback (marginal distribution)
-
 ```
-note that xpred, vpred and cpred are stored before resampling
 
