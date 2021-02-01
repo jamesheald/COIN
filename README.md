@@ -167,7 +167,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 ```
 
 ### Variable names
-Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided. Note that variables in bold relate to predictive distributions and are stored before resampling so that they do not depend on the state feedback.
+Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided. Note that variables in bold are stored before resampling so that they do not depend on the state feedback.
 <pre>
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
