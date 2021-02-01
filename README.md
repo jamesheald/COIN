@@ -49,7 +49,7 @@ The actual observation noise that a participant perceives is unknown. Therefore,
 obj.R = 2;
 [S,w] = obj.run_COIN;
 ```
-S is a cell array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the object before running the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-fit-to-adaptation-data)).
+S is a cell array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the object before running the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-of-the-COIN-model-fit-to-adaptation-data)).
 
 ### Plotting internal representations
 
