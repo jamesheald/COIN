@@ -103,6 +103,7 @@ When multiple runs are performed using parameters fit to data, each run can be a
 The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), specify the maximum number of CPU cores available using the maxCores property. The default setting of maxCores is 0, which executes runs in series.
 
 ### Properties
+Below is a list of all properties of the COIN class. A brief description of each property is provided.
 ```
 % model implementation
 P = 100                                   % number of particles
@@ -110,7 +111,7 @@ R = 1                                     % number of runs to perform, each cond
 maxC = 10                                 % maximum number of contexts that the model can instantiate
 maxCores = 0                              % maximum number of CPU cores available (0 implements serial computing)
 
-% parameters
+% model parameters
 sigmaQ = 0.0089                           % standard deviation of process noise
 adMu = [0.9425 0]                         % mean of prior of retention and drift
 adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
@@ -141,7 +142,7 @@ eraserTrials                              % trials on which to overwrite context
 adaptation                                % vector of adaptation data (NaN if not measured)
 
 % store
-store = {}                                % cell array specifying which variables to store in memory
+store = {}                                % cell array for specifying variables to store in memory
 
 % plot flags
 xPredPlot                                 % plot state | context
