@@ -224,4 +224,4 @@ xSampOld         % state sampled on the current trial (used to update the suffic
 yHat             % state feedback predicted (average across contexts and particles)
 yPred            % state feedback predicted in each context
 yPredMarg        % predicted state feedback (marginal distribution, discretised)
-<\pre>
+</pre>
