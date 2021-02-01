@@ -101,7 +101,7 @@ When multiple runs are performed using parameters fit to data, each run can be a
 The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), specify the maximum number of CPU cores available using the maxCores property. The default setting of maxCores is 0, which executes runs in series.
 
 ### Properties
-
+```
 % model implementation
 P = 100                                   % number of particles
 R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
@@ -163,7 +163,7 @@ gridD                                     % if adPlot == true, specify values of
 gridX                                     % if xPredPlot == ture or xPredMargPlot == true, specify values of x to evaluate p(x) at
 gridB                                     % if bPlot == true or bPredMargPlot == true, specify values of b to evaluate p(b) at
 gridY                                     % if yPredMargPlot == true, specify values of y to evaluate p(y) at
-
+```
 
 ### Variable names
 
