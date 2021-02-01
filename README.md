@@ -170,9 +170,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 
 ### Variable names
 Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided.
-<div class="text-purple">
-  This text is purple
-</div>
+<span style="color:blue">some *blue* text</span>.
 ```diff
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
