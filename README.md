@@ -180,6 +180,40 @@ explicit         % explicit component of learning
 implicit         % implicit component of learning
 transitionMatrix % expected value of the context transition matrix
 emissionMatrix   % expected value of the cue emission matrix
+adMu             % mean of the posterior of the retention and drift in each context
+adCovar          % covariance of the posterior of the retention and drift in each context
+bMu              % mean of the posterior of the bias in each context
+bVar             % variance of the posterior of the bias in each context
+xPred            % mean of the predictive distribution of the state in each context 
+vPred            % variance of the predictive distribution of the state in each context 
+xFilt            % mean of the filtered distribution of the state in each context 
+vFilt            % variance of the filtered distribution of the state in each context 
+C                % number of instantiated contexts
+n                % context transition counts
+nE               % cue emission counts
+beta             % global transition distribution
+betaE            % global emission distribution
+a                % retention in each context
+d                % drift in each context
+b                % bias in each context
+pQ               % probability of the observed cue in each context
+pY               % probability of the observed state feedback in each context
+cPrior           % probability of each context transition given the context sampled on the previous trial
+cPrev            % context sampled on the previous trial
+yPred            % state feedback predicted in each context
+xHat             % state predicted (average across contexts and particles)
+yHat             % state feedback predicted (average across contexts and particles)
+xPredMarg        % predicted state (marginal distribution)
+bPredMarg        % bias (marginal distribution)
+yPredMarg        % predicted state feedback (marginal distribution)
+p                % variance of state feedback predicted in each context
+e                % state feedback prediction error in each context
+sensoryNoise     % sensory noise
+motorNoise       % motor noise
+k                % Kalman gain in each context
+m                % number of tables in restaurant i serving dish j (Chinese restaurant franchise for the context transitions)
+mE               % number of tables in restaurant i serving dish j (Chinese restaurant franchise for the cue emissions)
+Q                % number of cues observed so far
 ```
 - adSS1 - sufficient statistic #1 for the retention and drift parameters
 - adSS2 - sufficient statistic #2 for the retention and drift parameters
