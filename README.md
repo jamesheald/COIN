@@ -106,7 +106,7 @@ The time it takes to execute multiple runs in series (using a for loop) can be p
 P = 100                                   % number of particles
 R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
 maxC = 10                                 % maximum number of contexts that the model can instantiate
-maxCores = 0                              % maximum number of CPU cores available for parallel computing (0 implements serial computing)
+maxCores = 0                              % maximum number of CPU cores available (0 implements serial computing)
 
 % parameters
 sigmaQ = 0.0089                           % standard deviation of process noise
