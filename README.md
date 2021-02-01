@@ -168,7 +168,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 ```
 
 ### Variable names
-Below is a list of variables in the COIN model. A brief description of each variable is provided. These variable can be stored 
+Below is a list of all the variables in the COIN model that can be stored for analysis. A brief description of each variable is provided.
 ```
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
