@@ -172,15 +172,15 @@ gridY                                     % if yPredMargPlot == true, specify va
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
 adMu             % mean of the posterior of the retention and drift in each context
-adSS1            % sufficient statistic #1 for the retention and drift parameters
-adSS2            % sufficient statistic #2 for the retention and drift parameters
+adSS1            % sufficient statistic for the retention and drift parameters #1
+adSS2            % sufficient statistic for the retention and drift parameters #2
 b                % bias in each context
 beta             % global transition distribution
 betaE            % global emission distribution  
 bMu              % mean of the posterior of the bias in each context
 bPredMarg        % bias (marginal distribution, discretised)
-bSS1             % sufficient statistic #1 for the bias parameter
-bSS2             % sufficient statistic #2 for the bias parameter
+bSS1             % sufficient statistic for the bias parameter #1
+bSS2             % sufficient statistic for the bias parameter #2
 bVar             % variance of the posterior of the bias in each context
 C                % number of instantiated contexts
 c                % sampled context
