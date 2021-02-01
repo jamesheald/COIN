@@ -167,53 +167,60 @@ gridY                                     % if yPredMargPlot == true, specify va
 
 ### Variable names
 ```
+a                % sampled retention in each context
+adCovar          % covariance of the posterior of the retention and drift in each context
+adMu             % mean of the posterior of the retention and drift in each context
 adSS1            % sufficient statistic #1 for the retention and drift parameters
 adSS2            % sufficient statistic #2 for the retention and drift parameters
+b                % sampled bias in each context
+beta             % global transition distribution
+betaE            % global emission distribution  
+bMu              % mean of the posterior of the bias in each context
+bPredMarg        % bias (marginal distribution)
 bSS1             % sufficient statistic #1 for the bias parameter
 bSS2             % sufficient statistic #2 for the bias parameter
-cPred            % predicted probabilities
-cFilt            % responsibilities
-cInf             % stationary probabilities
+bVar             % variance of the posterior of the bias in each context
+C                % number of instantiated contexts
 c                % sampled context
-iResamp          % indices of resampled particles
+cFilt            % context responsibilities
+cInf             % stationary context probabilities
+cPred            % predicted context probabilities (conditioned on the cue)
+cPrev            % context sampled on the previous trial
+cPrior           % prior context probabilities (not conditioned on the cue)
+d                % sampled drift in each context
+e                % state feedback prediction error in each context
+emissionMatrix   % expected value of the cue emission matrix
 explicit         % explicit component of learning
 implicit         % implicit component of learning
-transitionMatrix % expected value of the context transition matrix
-emissionMatrix   % expected value of the cue emission matrix
-adMu             % mean of the posterior of the retention and drift in each context
-adCovar          % covariance of the posterior of the retention and drift in each context
-bMu              % mean of the posterior of the bias in each context
-bVar             % variance of the posterior of the bias in each context
-xPred            % mean of the predictive distribution of the state in each context 
-vPred            % variance of the predictive distribution of the state in each context 
-xFilt            % mean of the filtered distribution of the state in each context 
-vFilt            % variance of the filtered distribution of the state in each context 
-C                % number of instantiated contexts
-n                % context transition counts
-nE               % cue emission counts
-beta             % global transition distribution
-betaE            % global emission distribution
-a                % retention in each context
-d                % drift in each context
-b                % bias in each context
-pQ               % probability of the observed cue in each context
-pY               % probability of the observed state feedback in each context
-cPrior           % probability of each context transition given the context sampled on the previous trial
-cPrev            % context sampled on the previous trial
-yPred            % state feedback predicted in each context
-xHat             % state predicted (average across contexts and particles)
-yHat             % state feedback predicted (average across contexts and particles)
-xPredMarg        % predicted state (marginal distribution)
-bPredMarg        % bias (marginal distribution)
-yPredMarg        % predicted state feedback (marginal distribution)
-p                % variance of state feedback predicted in each context
-e                % state feedback prediction error in each context
-sensoryNoise     % sensory noise
-motorNoise       % motor noise
+iResamp          % indices of resampled particles
+iX               % index of the observed state
 k                % Kalman gain in each context
 m                % number of tables in restaurant i serving dish j (Chinese restaurant franchise for the context transitions)
 mE               % number of tables in restaurant i serving dish j (Chinese restaurant franchise for the cue emissions)
+motorNoise       % motor noise
+n                % context transition counts
+nE               % cue emission counts
+p                % variance of state feedback predicted in each context
+pQ               % probability of the observed cue in each context        
+pY               % probability of the observed state feedback in each context
 Q                % number of cues observed so far
+sensoryNoise     % sensory noise
+transitionMatrix % expected value of the context transition matrix
+vFilt            % variance of the filtered distribution of the state in each context 
+vPred            % variance of the predictive distribution of the state in each context 
+vPrev            % variance of the filtered distribution of the state in each context 
+xFilt            % mean of the filtered distribution of the state in each context 
+xHat             % state predicted (average across contexts and particles)
+xPred            % mean of the predictive distribution of the state in each context 
+xPredMarg        % predicted state (marginal distribution)
+xPrev            % mean of the filtered distribution of the state in each context on previous trial
+xPrevSamp        % state sampled on the previous trial (used to update the sufficient statistics for the retention and drift parameters)
+xSamp            % state sampled on the current trial (used to update the sufficient statistics for the bias parameter)
+xSampOld         % state sampled on the current trial (used to update the sufficient statistics for the retention and drift parameters)
+yHat             % state feedback predicted (average across contexts and particles)
+yPred            % state feedback predicted in each context
+yPredMarg        % predicted state feedback (marginal distribution)
+
 ```
 - adSS1 - sufficient statistic #1 for the retention and drift parameters
 - adSS2 - sufficient statistic #2 for the retention and drift parameters
