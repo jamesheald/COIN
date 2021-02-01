@@ -167,7 +167,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 ```
 
 ### Variable names
-Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided. Note that variables in bold are stored before resampling so that they do not depend on the state feedback.
+Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided. Note that variables in bold are stored before particles are resampled to ensure they do not depend on the state feedback. Therefore, care should be taken if these variables are compared with variables stored after particles are resampled in terms of equating particles (the indices of resampled particles may need to be taken into account).
 <pre>
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
