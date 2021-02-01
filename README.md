@@ -211,11 +211,11 @@ Q                % number of cues observed so far
 sensoryNoise     % sensory noise
 transitionMatrix % expected value of the context transition matrix
 vFilt            % variance of the filtered distribution of the state in each context 
-vPred            % variance of the predictive distribution of the state in each context 
+<b>vPred            % variance of the predictive distribution of the state in each context</b> 
 vPrev            % variance of the filtered distribution of the state in each context 
 xFilt            % mean of the filtered distribution of the state in each context 
 xHat             % state predicted (average across contexts and particles)
-xPred            % mean of the predictive distribution of the state in each context 
+<b>xPred            % mean of the predictive distribution of the state in each context</b>
 xPredMarg        % predicted state (marginal distribution, discretised)
 xPrev            % mean of the filtered distribution of the state in each context on previous trial
 xPrevSamp        % state sampled on the previous trial (used to update the sufficient statistics for the retention and drift parameters)
