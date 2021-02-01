@@ -169,12 +169,12 @@ gridY                                     % if yPredMargPlot == true, specify va
 
 ### Variable names
 ```
-a                % sampled retention in each context
+a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
 adMu             % mean of the posterior of the retention and drift in each context
 adSS1            % sufficient statistic #1 for the retention and drift parameters
 adSS2            % sufficient statistic #2 for the retention and drift parameters
-b                % sampled bias in each context
+b                % bias in each context
 beta             % global transition distribution
 betaE            % global emission distribution  
 bMu              % mean of the posterior of the bias in each context
@@ -189,7 +189,7 @@ cInf             % stationary context probabilities
 cPred            % predicted context probabilities (conditioned on the cue)
 cPrev            % context sampled on the previous trial
 cPrior           % prior context probabilities (not conditioned on the cue)
-d                % sampled drift in each context
+d                % drift in each context
 e                % state feedback prediction error in each context
 emissionMatrix   % expected value of the cue emission matrix
 explicit         % explicit component of learning
