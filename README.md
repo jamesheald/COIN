@@ -172,6 +172,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided.
 ```html
 <p style="color:red;">This is a paragraph.</p>
+<span style="color:orange;">Word up</span>
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
 adMu             % mean of the posterior of the retention and drift in each context
