@@ -69,7 +69,7 @@ This will generate the desired plots&mdash;a state | context plot and a predicte
 
 ### Storing variables
 
-Online inference can be performed without storing all of the past values of all inferred variables. Hence, to reduce memory requirements, the past values of variables are only stored if they will be needed for later analysis. The only exceptions to this are the adaptation and the state feedback, which are always stored. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
+Online inference can be performed without storing all of the past values of all inferred variables. Therefore, to reduce memory requirements, the past values of variables are only stored if they will be needed for later analysis. The only exceptions to this are the adaptation and the state feedback, which are always stored. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
 ```
 obj.store = {'k','cFilt'};
 ```
