@@ -102,6 +102,8 @@ The time it takes to execute multiple runs in series (using a for loop) can be p
 
 ### Properties
 
+    properties
+        
         % model implementation
         P = 100                                   % number of particles
         R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
@@ -136,7 +138,7 @@ The time it takes to execute multiple runs in series (using a for loop) can be p
         eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
         
         % measured adaptation data
-        adaptation                                % vector of adaptation data, on element per trial (NaN if not measured)
+        adaptation                                % vector of adaptation data (NaN if not measured)
         
         % store
         store = {}                                % cell array specifying which variables to store in memory
@@ -163,6 +165,8 @@ The time it takes to execute multiple runs in series (using a for loop) can be p
         gridX                                     % if xPredPlot == ture or xPredMargPlot == true, specify values of x to evaluate p(x) at
         gridB                                     % if bPlot == true or bPredMargPlot == true, specify values of b to evaluate p(b) at
         gridY                                     % if yPredMargPlot == true, specify values of y to evaluate p(y) at
+        
+    end
 
 ### Variable names
 
