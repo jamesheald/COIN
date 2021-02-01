@@ -170,7 +170,10 @@ gridY                                     % if yPredMargPlot == true, specify va
 
 ### Variable names
 Below is a list of all the COIN model variables that can be stored. A brief description of each variable is provided.
+
 ```
+<pre>
+sample <b>sample</b> sample
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
 adMu             % mean of the posterior of the retention and drift in each context
@@ -224,4 +227,5 @@ xSampOld         % state sampled on the current trial (used to update the suffic
 yHat             % state feedback predicted (average across contexts and particles)
 yPred            % state feedback predicted in each context
 yPredMarg        % predicted state feedback (marginal distribution, discretised)
+</pre>
 ```
