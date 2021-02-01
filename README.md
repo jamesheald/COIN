@@ -84,7 +84,7 @@ end
 ```
 A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
-note that xpred, vpred and cpred are stored before resampling!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Note that xpred, vpred and cpred are stored before resampling!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Fitting the model to data
 
@@ -188,7 +188,7 @@ C                % number of instantiated contexts
 c                % sampled context
 cFilt            % context responsibilities
 cInf             % stationary context probabilities
-cPred            % predicted context probabilities (conditioned on the cue)
+- ![#f03c15](cPred            % predicted context probabilities (conditioned on the cue)) `#f03c15`
 cPrev            % context sampled on the previous trial
 cPrior           % prior context probabilities (not conditioned on the cue)
 d                % drift in each context
