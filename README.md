@@ -222,6 +222,14 @@ yPred            % state feedback predicted in each context
 yPredMarg        % predicted state feedback (marginal distribution)
 
 ```
+
+- a                % sampled retention in each context
+- adCovar          % covariance of the posterior of the retention and drift in each context
+- adMu             % mean of the posterior of the retention and drift in each context
+- adSS1            % sufficient statistic #1 for the retention and drift parameters
+- adSS2            % sufficient statistic #2 for the retention and drift parameters
+
+
 - adSS1 - sufficient statistic #1 for the retention and drift parameters
 - adSS2 - sufficient statistic #2 for the retention and drift parameters
 - bSS1 - sufficient statistic #1 for the bias parameter
