@@ -168,6 +168,7 @@ gridY                                     % if yPredMargPlot == true, specify va
 ```
 
 ### Variable names
+Below is a list of the names of variables computed by the COIN model and a brief description of them.
 ```
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
