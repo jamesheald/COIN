@@ -166,7 +166,21 @@ gridY                                     % if yPredMargPlot == true, specify va
 ```
 
 ### Variable names
-
+```
+adSS1            % sufficient statistic #1 for the retention and drift parameters
+adSS2            % sufficient statistic #2 for the retention and drift parameters
+bSS1             % sufficient statistic #1 for the bias parameter
+bSS2             % sufficient statistic #2 for the bias parameter
+cPred            % predicted probabilities
+cFilt            % responsibilities
+cInf             % stationary probabilities
+c                % sampled context
+iResamp          % indices of resampled particles
+explicit         % explicit component of learning
+implicit         % implicit component of learning
+transitionMatrix % expected value of the context transition matrix
+emissionMatrix   % expected value of the cue emission matrix
+```
 - adSS1 - sufficient statistic #1 for the retention and drift parameters
 - adSS2 - sufficient statistic #2 for the retention and drift parameters
 - bSS1 - sufficient statistic #1 for the bias parameter
