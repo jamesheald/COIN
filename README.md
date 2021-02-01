@@ -102,71 +102,68 @@ The time it takes to execute multiple runs in series (using a for loop) can be p
 
 ### Properties
 
-    properties
-        
-        % model implementation
-        P = 100                                   % number of particles
-        R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
-        maxC = 10                                 % maximum number of contexts that the model can instantiate
-        maxCores = 0                              % maximum number of CPU cores available for parallel computing (0 implements serial computing)
-        
-        % parameters
-        sigmaQ = 0.0089                           % standard deviation of process noise
-        adMu = [0.9425 0]                         % mean of prior of retention and drift
-        adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
-        sigmaS = 0.03                             % standard deviation of sensory noise
-        sigmaM = 0.0182                           % standard deviation of motor noise
-        learnB = false                            % learn the measurment bias or not
-        bMu = 0                                   % mean of prior of measurement bias (if bias is being learned)
-        bLambda = 70^2                            % precision of prior of measurement bias (if bias is being learned)
-        gamma = 0.1                               % gamma hyperparameter of the Chinese restaurant franchise for the context
-        alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
-        rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
-        gammaE = 0.1                              % gamma hyperparameter of the Chinese restaurant franchise for the cue
-        alphaE = 0.1                              % alpha hyperparameter of the Chinese restaurant franchise for the cue
-        sigmaR                                    % standard deviation of observation noise (set later based on sigmaS and sigmaM)
-        kappa                                     % kappa (self-transition) hyperparameter of the Chinese restaurant franchise for the context (set later based on rho and alpha)
-        H                                         % matrix of context-dependent observation vectors (set later)
-        
-        % paradigm
-        x                                         % vector of (noiseless) perturbations (NaN indicates a channel trial)
-        q                                         % vector of sensory cues (if any)
-        cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
-        T                                         % total number of trials (set later based on the length of x)
-        trials                                    % trials to simulate (set later to 1:T if empty)
-        observeY                                  % is the state feedback observed or not on each trial (set later based on x)
-        eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
-        
-        % measured adaptation data
-        adaptation                                % vector of adaptation data (NaN if not measured)
-        
-        % store
-        store = {}                                % cell array specifying which variables to store in memory
-        
-        % plot flags
-        xPredPlot                                 % plot state | context
-        cPredPlot                                 % plot predicted probabilities
-        cFiltPlot                                 % plot responsibilities (including novel context probabilities)
-        cInfPlot                                  % plot stationary probabilities
-        adPlot                                    % plot retention | context and drift | context
-        bPlot                                     % plot bias | context
-        transitionMatrixPlot                      % plot context transition probabilities
-        emissionMatrixPlot                        % plot cue emission probabilities
-        xPredMargPlot                             % plot state (marginal distribution)
-        bPredMargPlot                             % plot bias (marginal distribution)
-        yPredMargPlot                             % plot predicted state feedback (marginal distribution)
-        explicitPlot                              % plot explicit component of learning
-        implicitPlot                              % plot implicit component of learning
-        xHatPlot                                  % plot mean of state (marginal distribution). if learnB == false, xHat = yHat
-        
-        % plot inputs
-        gridA                                     % if adPlot == true, specify values of a to evaluate p(a) at
-        gridD                                     % if adPlot == true, specify values of d to evaluate p(d) at
-        gridX                                     % if xPredPlot == ture or xPredMargPlot == true, specify values of x to evaluate p(x) at
-        gridB                                     % if bPlot == true or bPredMargPlot == true, specify values of b to evaluate p(b) at
-        gridY                                     % if yPredMargPlot == true, specify values of y to evaluate p(y) at
-        
-    end
+% model implementation
+P = 100                                   % number of particles
+R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
+maxC = 10                                 % maximum number of contexts that the model can instantiate
+maxCores = 0                              % maximum number of CPU cores available for parallel computing (0 implements serial computing)
+
+% parameters
+sigmaQ = 0.0089                           % standard deviation of process noise
+adMu = [0.9425 0]                         % mean of prior of retention and drift
+adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
+sigmaS = 0.03                             % standard deviation of sensory noise
+sigmaM = 0.0182                           % standard deviation of motor noise
+learnB = false                            % learn the measurment bias or not
+bMu = 0                                   % mean of prior of measurement bias (if bias is being learned)
+bLambda = 70^2                            % precision of prior of measurement bias (if bias is being learned)
+gamma = 0.1                               % gamma hyperparameter of the Chinese restaurant franchise for the context
+alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
+rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
+gammaE = 0.1                              % gamma hyperparameter of the Chinese restaurant franchise for the cue
+alphaE = 0.1                              % alpha hyperparameter of the Chinese restaurant franchise for the cue
+sigmaR                                    % standard deviation of observation noise (set later based on sigmaS and sigmaM)
+kappa                                     % kappa (self-transition) hyperparameter of the Chinese restaurant franchise for the context (set later based on rho and alpha)
+H                                         % matrix of context-dependent observation vectors (set later)
+
+% paradigm
+x                                         % vector of (noiseless) perturbations (NaN indicates a channel trial)
+q                                         % vector of sensory cues (if any)
+cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
+T                                         % total number of trials (set later based on the length of x)
+trials                                    % trials to simulate (set later to 1:T if empty)
+observeY                                  % is the state feedback observed or not on each trial (set later based on x)
+eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
+
+% measured adaptation data
+adaptation                                % vector of adaptation data (NaN if not measured)
+
+% store
+store = {}                                % cell array specifying which variables to store in memory
+
+% plot flags
+xPredPlot                                 % plot state | context
+cPredPlot                                 % plot predicted probabilities
+cFiltPlot                                 % plot responsibilities (including novel context probabilities)
+cInfPlot                                  % plot stationary probabilities
+adPlot                                    % plot retention | context and drift | context
+bPlot                                     % plot bias | context
+transitionMatrixPlot                      % plot context transition probabilities
+emissionMatrixPlot                        % plot cue emission probabilities
+xPredMargPlot                             % plot state (marginal distribution)
+bPredMargPlot                             % plot bias (marginal distribution)
+yPredMargPlot                             % plot predicted state feedback (marginal distribution)
+explicitPlot                              % plot explicit component of learning
+implicitPlot                              % plot implicit component of learning
+xHatPlot                                  % plot mean of state (marginal distribution). if learnB == false, xHat = yHat
+
+% plot inputs
+gridA                                     % if adPlot == true, specify values of a to evaluate p(a) at
+gridD                                     % if adPlot == true, specify values of d to evaluate p(d) at
+gridX                                     % if xPredPlot == ture or xPredMargPlot == true, specify values of x to evaluate p(x) at
+gridB                                     % if bPlot == true or bPredMargPlot == true, specify values of b to evaluate p(b) at
+gridY                                     % if yPredMargPlot == true, specify values of y to evaluate p(y) at
+
 
 ### Variable names
 
