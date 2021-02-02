@@ -183,7 +183,7 @@ bPredMargPlot                             % plot bias (marginal distribution)
 yPredMargPlot                             % plot predicted state feedback (marginal distribution)
 explicitPlot                              % plot explicit component of learning
 implicitPlot                              % plot implicit component of learning
-xHatPlot                                  % plot mean of state (marginal distribution). if learnB == false, xHat = yHat
+xHatPlot                                  % plot mean of state (marginal distribution)
 
 % plot inputs
 gridA                                     % if adPlot == true, specify values of a to evaluate p(a) at
