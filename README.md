@@ -119,7 +119,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-After the object array has been created, the objective_COIN method can be called:
+and then call the objective_COIN method:
 ```
 o = obj.objective_COIN;
 ```
