@@ -113,7 +113,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-Note that the adaptation property should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *n*th average adaptation measurement is the average *n*th adaptation measurement across participants).  
+The adaptation property should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *n*th average adaptation measurement is the average *n*th adaptation measurement across participants).  
 
 After the object array has been created, call the objective_COIN method:
 ```
@@ -127,7 +127,7 @@ When multiple runs of a simulation are performed using parameters fit to data, e
 
 ### Parallel computing
 
-The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), and thus reduce runtime, specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series.
+The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster) and thus reduce runtime, specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series.
 
 ### Properties
 Below is a list of all the properties of the COIN class. A brief description of each property is provided.
