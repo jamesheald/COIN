@@ -90,7 +90,7 @@ This will generate the requested plots&mdash;a state | context plot and a predic
 
 The COIN model can be fit either to an individual participants’ data or to the average data of a group of participants. Here, the case of the average group data is presented, as an individual participant is a special case of a group with 1 member.
 
-The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, create an object array with one object per participant. For each object, define the relevant model parameters, the paradigm and the adaptation data using the corresponding [properties](#properties) of the object. For example:
+The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, create an object array with one object per participant. For each object, define the relevant model parameters, the paradigm and the adaptation data using the corresponding [properties](#properties) of the object. As an example object array:
 ```
 for p = 1:P % loop over participants
     
@@ -113,7 +113,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-The adaptation property should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *n*th average adaptation measurement is the average *n*th adaptation measurement across participants).  
+Note that the adaptation property should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *n*th average adaptation measurement is the average *n*th adaptation measurement across participants).  
 
 After the object array has been created, call the objective_COIN method:
 ```
