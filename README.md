@@ -160,7 +160,7 @@ q                                         % vector of sensory cues (use consecut
 cuesExist                                 % does the experiment have sensory cues or not (set later based on q)?
 T                                         % total number of trials (set later based on the length of x)
 trials                                    % trials to simulate (set to 1:T later if empty)
-observeY                                  % is the state feedback observed or not on each trial (set later based on x)
+observeY                                  % is the state feedback observed or not on each trial (set later based on x)?
 eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
 
 % measured adaptation data
