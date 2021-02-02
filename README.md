@@ -123,7 +123,7 @@ end
 ```
 As shown above, use ([properties](#properties)) to define the model parameters, paradigm and adaptation data. The adaptation data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). There are assumed to be an equal number of adaptation data points per participant (the *i*-th average adaptation data point is the average *i*-th adaptation data point across participants). The objective_COIN method can then be called:
 ```
-nll = obj.objective_COIN;
+o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the negative log-likelihood, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of the estimate can be reduced by increasing the number of runs using the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid long runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g., [BADS](https://github.com/lacerbi/bads)).
 
