@@ -243,9 +243,9 @@ xHat             % average predicted state (average across contexts and particle
 <b>xPred            % mean of the predictive distribution of the state in each context</b>
 xPredMarg        % predicted state (marginal distribution, discretised)
 xPrev            % mean of the filtered distribution of the state in each context on previous trial
-xPrevSamp        % state sampled on previous trial (to update the sufficient statistics for the retention and drift parameters)
-xSamp            % state sampled on current trial (to update the sufficient statistics for the bias parameter)
-xSampOld         % state sampled on current trial (to update the sufficient statistics for the retention and drift parameters)
+xPrevSamp        % states sampled on previous trial (to update the sufficient statistics for the retention and drift parameters in each context)
+xSamp            % state sampled on current trial (to update the sufficient statistics for the bias parameter in each context)
+xSampOld         % states sampled on current trial (to update the sufficient statistics for the retention and drift parameters in each context)
 yHat             % average predicted state feedback (average across contexts and particles)
 yPred            % mean of the predictive distribution of the state feedback in each context 
 yPredMarg        % predicted state feedback (marginal distribution, discretised)
