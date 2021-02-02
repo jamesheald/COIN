@@ -103,7 +103,7 @@ for p = 1:P % loop over participants
     obj(p).alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
     obj(p).rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
     
-    % paradigm (may be unique to each participant)
+    % paradigm (could be unique to each participant)
     obj(p).x = ...;
     
     % adaptation (unique to each participant)
@@ -111,7 +111,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-The adaptation should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
+The adaptation property should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and the number of adaptation measurements should be the same for all participants (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
 
 After the object array has been created, call the objective_COIN method:
 ```
