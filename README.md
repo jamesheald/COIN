@@ -53,11 +53,11 @@ S is a cell array with one cell per run and w is vector specifying the relative 
 
 ### Storing variables
 
-Online inference does not require all of the past values of all inferred variables to be stored in memory. Therefore, to reduce memory requirements, the past values of variables are only stored in memory if they will be needed for later analysis (the only exceptions to this are the adaptation and the state feedback, which are always stored). To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities, define store as
+Online inference does not require all of the past values of all inferred variables to be stored in memory. Therefore, to reduce memory requirements, the past values of variables are only stored in memory if they will be needed for later analysis (the adaptation and the state feedback are exceptions, as they are always stored). To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities, define store as
 ```
 obj.store = {'k','cFilt'};
 ```
-The store property must be set before running the model. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility:
+The store property must be set before calling the run_COIN method. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility:
 ```
 for trial = 1:numel(obj.x) % loop over trials
     for particle = 1:obj.P % loop over particles
