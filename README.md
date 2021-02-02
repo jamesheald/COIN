@@ -88,11 +88,11 @@ A simple average across particles can be computed on each trial, as all particle
 
 ### Fitting the model to data
 
-The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. 
+The COIN model can be fit either to an individual participants’ data or to group average data. Because an individual participant is a special case of a group with 1 member, the general group case is presented here.
 
 #### Group average data
 
-To calculate the negative log-likelihood for group average data, create an array of objects (one per participant). For each object, define the model parameters, paradigm and adaptation data for the participant via [properties](#properties):
+The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood for group average data, create an array of objects (one object per participant). For each object, define the model parameters, paradigm and adaptation data via [properties](#properties):
 ```
 for p = 1:P % loop over participants
     
@@ -115,7 +115,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-The adaptation data should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of adaptation measurements per participant (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
+Adaptation should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of adaptation measurements per participant (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
 
 After the object array has been created, call the objective_COIN method:
 ```
@@ -125,7 +125,8 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Individual participants’ data
 
-To calculate the negative log-likelihood for an individual participants’ data, the proceedure described for group average data can be followed (an individual participant is a special case of a group with 1 member).
+
+To calculate the negative log-likelihood for an individual participants’ data, the proceedure described for group average data can be followed ().
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
