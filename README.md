@@ -96,7 +96,7 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Fit group average data
 
-To fit the COIN model to group average data, create an object array (one object per participant). For example, to create an array of objects for a group of P participants:
+To fit the COIN model to group average data, create an array of objects (one object per participant). For example, to create an array of objects for a group of P participants:
 ```
 for p = 1:P
     obj(p) = COIN;
