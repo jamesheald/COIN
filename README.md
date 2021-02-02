@@ -51,22 +51,6 @@ obj.R = 2;
 ```
 S is a cell array with one cell per run and w is vector specifying the relative weight of each run. In this example, each run is assigned an equal weight. However, if adaptation data is passed to the object before running the model, each run will be assigned a weight based on how well it explains the data (see [Inferring internal representations fit to adaptation data](#inferring-internal-representations-of-the-COIN-model-fit-to-adaptation-data)).
 
-### Plotting internal representations
-
-To plot specific variables or distributions, activate the relevant plot flags in the properties of the class object. If plotting a continuous distribution, also specify the points at which to evaluate the distribution. For example, to plot the distribution of the state of each context and the predicted probabilities:
-```
-obj.xPredPlot = true; % i want to plot the state | context
-obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
-obj.cPredPlot = true; % i want to plot the predicted probabilities
-```
-Set these properties before calling the run_COIN method so that the necessary variables can be stored when the model runs. For a list of variables that can be plotted and how to plot them, see [Properties](#properties).
-
-After the model has been run, call the plot_COIN method:
-```
-P = obj.plot_COIN(S,w);
-```
-This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot in this example. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
-
 ### Storing variables
 
 Online inference can be performed without storing all of the past values of all inferred variables. Therefore, to reduce memory requirements, the past values of variables are only stored if they will be needed for later analysis. The only exceptions to this are the adaptation and the state feedback, which are always stored. To store the values of particular variables on all trials, add the names of these variables to the store property. For example, to store the Kalman gains and responsibilities:
@@ -83,6 +67,22 @@ for trial = 1:numel(obj.x) % loop over trials
 end
 ```
 A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+
+### Plotting internal representations
+
+To plot specific variables or distributions, activate the relevant plot flags in the properties of the class object. If plotting a continuous distribution, also specify the points at which to evaluate the distribution. For example, to plot the distribution of the state of each context and the predicted probabilities:
+```
+obj.xPredPlot = true; % i want to plot the state | context
+obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
+obj.cPredPlot = true; % i want to plot the predicted probabilities
+```
+Set these properties before calling the run_COIN method so that the necessary variables can be stored when the model runs. For a list of variables that can be plotted and how to plot them, see [Properties](#properties).
+
+After the model has been run, call the plot_COIN method:
+```
+P = obj.plot_COIN(S,w);
+```
+This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot in this example. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Fitting the model to data
 
