@@ -86,7 +86,7 @@ A simple average across particles can be computed on each trial, as all particle
 
 ### Fitting the model to data
 
-#### Fit individual participants’ data
+#### Individual participants’ data
 
 The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. The data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). The objective_COIN method can then be called:
 ```
@@ -94,7 +94,7 @@ o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the negative log-likelihood, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of the estimate can be reduced by increasing the number of runs using the R property (this is best done in conjunction with [Parallel computing](#parallel-computing) to avoid long runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g., [BADS](https://github.com/lacerbi/bads)).
 
-#### Fit group average data
+#### Group average data
 
 To calculate the negative log-likelihood for group average data, create an array of objects (one per participant):
 ```
@@ -124,14 +124,6 @@ After the object array has been created, the objective_COIN method can be called
 o = obj.objective_COIN;
 ```
 It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point across participants).
-
-The adaptation data and paradigm (perturbations, sensory cues) associated with each object should be appropriate for the participant. 
-
-Each object should have the same model parameters but different adaptation data. 
-
-Each object in the array should its own adaptation data and a paradigm (perturbations, sensory cues) participant.
-
-
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
