@@ -74,9 +74,9 @@ A simple average across particles can be computed on each trial, as all particle
 
 To plot specific variables or distributions of variables, activate the relevant plot flags in the properties of the class object. If plotting a continuous distribution, also specify the points at which to evaluate the distribution. For example, to plot the distribution of the state of each context and the predicted probabilities:
 ```
-obj.xPredPlot = true; % i want to plot the state | context
+obj.xPredPlot = true; % plot the state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
-obj.cPredPlot = true; % i want to plot the predicted probabilities
+obj.cPredPlot = true; % plot the predicted probabilities
 ```
 Set these properties before calling the run_COIN method so that the variables needed to generate the plots can be stored. For a full list of variables that can be plotted and how to plot them, see the plot flags and plot inputs sections of [Properties](#properties).
 
