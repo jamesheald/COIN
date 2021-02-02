@@ -4,9 +4,9 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
 ## Installation
 
-Download the COIN.m file.
+1. Download the COIN.m file.
 
-Install the following packages (to improve the efficiency of the code):
+2. Install the following packages (to improve the efficiency of the code):
 
 - "[Lightspeed matlab toolbox](https://github.com/tminka/lightspeed)" by Tom Minka. 
   - Run install_lightspeed.m to compile the necessary mex files. 
