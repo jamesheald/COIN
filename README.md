@@ -229,7 +229,7 @@ mE               % number of tables in restaurant i serving dish j (Chinese rest
 motorNoise       % motor noise
 n                % context transition counts
 nE               % cue emission counts
-<b>pPred            % variance of state feedback predicted in each context</b>
+<b>pPred            % variance of the predictive distribution of the state feedback in each context</b>
 pQ               % probability of the observed cue in each context        
 pY               % probability of the observed state feedback in each context
 Q                % number of cues observed
