@@ -123,7 +123,7 @@ and then call the objective_COIN method:
 ```
 o = obj.objective_COIN;
 ```
-It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point across participants).
+It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point of each participant).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
