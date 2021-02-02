@@ -2,7 +2,7 @@
 
 The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. The model is described in detail in a bioRxiv preprint: [Contextual inference underlies the learning of sensorimotor repertoires](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1).
 
-## Dependencies
+## Installation
 
 To improve the efficiency of the code, the COIN model requires installation of the following packages:
 
@@ -15,6 +15,8 @@ Add each package to the MATLAB search path:
 addpath(genpath('directory'))
 ```
 Here 'directory' is the full path to the root folder of the package.
+
+Also download and add COIN.m to the search path.
 
 ## The model
 
