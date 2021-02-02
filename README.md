@@ -188,7 +188,7 @@ xHatPlot                                  % plot mean of state (marginal distrib
 % plot inputs
 gridA                                     % if adPlot == true, specify values of a to evaluate p(a) at
 gridD                                     % if adPlot == true, specify values of d to evaluate p(d) at
-gridX                                     % if xPredPlot == ture or xPredMargPlot == true, specify values of x to evaluate p(x) at
+gridX                                     % if xPredPlot == true or xPredMargPlot == true, specify values of x to evaluate p(x) at
 gridB                                     % if bPlot == true or bPredMargPlot == true, specify values of b to evaluate p(b) at
 gridY                                     % if yPredMargPlot == true, specify values of y to evaluate p(y) at
 ```
