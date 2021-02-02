@@ -88,7 +88,7 @@ A simple average across particles can be computed on each trial, as all particle
 
 ### Fitting the model to data
 
-The COIN model can be fit either to an individual participants’ data or to group average data. Note that an individual participant can be considered a group with 1 member, and so only the group case is presented here.
+The COIN model can be fit either to an individual participants’ data or to group average data. Because an individual participant can be considered a group with 1 member, the group case is presented here.
 
 The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood for group average data, create an array of objects (one object per participant). For the special For each object, define the model parameters, paradigm and adaptation data via [properties](#properties):
 ```
