@@ -145,13 +145,13 @@ sigmaM = 0.0182                           % standard deviation of motor noise
 learnB = false                            % learn the measurment bias or not?
 bMu = 0                                   % mean of prior of measurement bias (if bias is being learned)
 bLambda = 70^2                            % precision of prior of measurement bias (if bias is being learned)
-gamma = 0.1                               % gamma hyperparameter of the Chinese restaurant franchise for the context
-alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
-rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
-gammaE = 0.1                              % gamma hyperparameter of the Chinese restaurant franchise for the cue
-alphaE = 0.1                              % alpha hyperparameter of the Chinese restaurant franchise for the cue
+gamma = 0.1                               % gamma hyperparameter of the Chinese restaurant franchise for the context transitions
+alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context transitions
+rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context transitions
+gammaE = 0.1                              % gamma hyperparameter of the Chinese restaurant franchise for the cue emissions
+alphaE = 0.1                              % alpha hyperparameter of the Chinese restaurant franchise for the cue emissions
 sigmaR                                    % standard deviation of observation noise (set later based on sigmaS and sigmaM)
-kappa                                     % kappa (self-transition) hyperparameter of the Chinese restaurant franchise for the context (set later based on rho and alpha)
+kappa                                     % kappa (self-transition) hyperparameter of the Chinese restaurant franchise for the context transitions (set later based on rho and alpha)
 H                                         % matrix of context-dependent observation vectors (set later)
 
 % paradigm
