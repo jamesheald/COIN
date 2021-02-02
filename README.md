@@ -129,10 +129,7 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Individual participants’ data
 
-To calculate the negative log-likelihood for an individual participants’ data, follow the same proceedure (an individual participant is a special case of a group with 1 member).
-
- and then call the objective_COIN method:
- For each object in the array, define the model parameters (see [Properties](#properties)) and pass the data to the class object via the adaptation property. 
+To calculate the negative log-likelihood for an individual participants’ data, follow the same proceedure as for group average data (an individual participant is a special case of a group with 1 member).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
