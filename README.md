@@ -26,15 +26,15 @@ obj = COIN;
 ```
 This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten. Data in properties can be operated on by methods (functions) of the class.
 
-To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
+To simulate learning on a simple paradigm, first define a series of perturbations (use NaN to indicate a channel trial):
 ```
 obj.x = [zeros(1,50) ones(1,125) -ones(1,15) NaN(1,150)]; % spontaneous recovery paradigm
 ```
-and run the model by calling the run_COIN method on object obj:
+Then run the model by calling the run_COIN method on object obj:
 ```
 [S,w] = obj.run_COIN;
 ```
-The adaptation and state feedback (perturbation plus random observation noise) are contained in a cell in S. To plot them:
+The adaptation and state feedback (perturbation plus random observation noise) are contained in a cell in S. They can be plotted as follows:
 ```
 figure
 plot(S{1}.y,'.')
