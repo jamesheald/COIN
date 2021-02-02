@@ -142,7 +142,7 @@ adMu = [0.9425 0]                         % mean of prior of retention and drift
 adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
 sigmaS = 0.03                             % standard deviation of sensory noise
 sigmaM = 0.0182                           % standard deviation of motor noise
-learnB = false                            % learn the measurment bias or not
+learnB = false                            % learn the measurment bias or not?
 bMu = 0                                   % mean of prior of measurement bias (if bias is being learned)
 bLambda = 70^2                            % precision of prior of measurement bias (if bias is being learned)
 gamma = 0.1                               % gamma hyperparameter of the Chinese restaurant franchise for the context
@@ -157,7 +157,7 @@ H                                         % matrix of context-dependent observat
 % paradigm
 x                                         % vector of (noiseless) perturbations (NaN if channel trial)
 q                                         % vector of sensory cues (use consecutive integers starting from 1 to represent cues)
-cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
+cuesExist                                 % does the experiment have sensory cues or not (set later based on q)?
 T                                         % total number of trials (set later based on the length of x)
 trials                                    % trials to simulate (set later to 1:T if empty)
 observeY                                  % is the state feedback observed or not on each trial (set later based on x)
