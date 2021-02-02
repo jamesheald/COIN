@@ -156,7 +156,7 @@ H                                         % matrix of context-dependent observat
 
 % paradigm
 x                                         % vector of (noiseless) perturbations (NaN if channel trial)
-q                                         % vector of sensory cues (use consecutive integers starting form 1 to represent cues)
+q                                         % vector of sensory cues (use consecutive integers starting from 1 to represent cues)
 cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
 T                                         % total number of trials (set later based on the length of x)
 trials                                    % trials to simulate (set later to 1:T if empty)
