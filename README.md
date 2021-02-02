@@ -78,7 +78,7 @@ obj.xPredPlot = true; % plot state | context
 obj.gridX = linspace(-1.5,1.5,500); % points to evaluate state | context at
 obj.cPredPlot = true; % plot the predicted probabilities
 ```
-These properties should be set before calling the run_COIN method so that the variables needed to generate the plots can be stored. For a full list of variables that can be plotted and how to plot them, see the plot flags and plot inputs sections of [Properties](#properties).
+These properties should be set before calling the run_COIN method so that the variables needed to generate the requested plots can be stored. For a full list of variables that can be plotted and how to plot them, see the plot flags and plot inputs sections of [Properties](#properties).
 
 After the model has been run, call the plot_COIN method:
 ```
