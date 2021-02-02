@@ -12,7 +12,7 @@ To improve the efficiency of the COIN model, installation of the following packa
 
 Add each package to the MATLAB search path via the following command: 
 ```
-addpath(genpath('directory'))
+addpath(genpath('directory'));
 ```
 Here 'directory' is the full path to the root folder of the package.
 
