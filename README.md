@@ -136,7 +136,7 @@ Below is a list of all the properties of the COIN class. A brief description of 
 P = 100                                   % number of particles
 R = 1                                     % number of runs to perform, each conditioned on a different observation noise sequence
 maxC = 10                                 % maximum number of contexts that the model can instantiate
-maxCores = 0                              % maximum number of CPU cores available (0 implements serial computing)
+maxCores = 0                              % maximum number of CPU cores available (0 implements serial processing)
 
 % model parameters
 sigmaQ = 0.0089                           % standard deviation of process noise
