@@ -96,18 +96,18 @@ for p = 1:P % loop over participants
     obj(p) = COIN;
     
     % parameters (same for all participants)
-    obj(p).sigmaQ = ...;              % standard deviation of process noise
-    obj(p).adMu = [... 0]             % mean of prior of retention and drift
-    obj(p).adLambda = diag([... ...]) % precision of prior of retention and drift
-    obj(p).sigmaM = ...               % standard deviation of motor noise
-    obj(p).alpha = ...                % alpha hyperparameter of the Chinese restaurant franchise for the context
-    obj(p).rho = ...                  % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
+    obj(p).sigmaQ = <insert>;              % standard deviation of process noise
+    obj(p).adMu = [<insert> 0]             % mean of prior of retention and drift
+    obj(p).adLambda = diag([<insert> <insert>]) % precision of prior of retention and drift
+    obj(p).sigmaM = <insert>               % standard deviation of motor noise
+    obj(p).alpha = <insert>                % alpha hyperparameter of the Chinese restaurant franchise for the context
+    obj(p).rho = <insert>                  % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
     
     % paradigm (could be unique to each participant)
-    obj(p).x = ...
+    obj(p).x = <insert>
     
     % adaptation (unique to each participant)
-    obj(p).adaptation = ...
+    obj(p).adaptation = <insert>
     
 end
 ```
