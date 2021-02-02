@@ -199,15 +199,15 @@ Below is a list of all the COIN model variables that can be stored. A brief desc
 a                % retention in each context
 adCovar          % covariance of the posterior of the retention and drift in each context
 adMu             % mean of the posterior of the retention and drift in each context
-adSS1            % sufficient statistic for the retention and drift parameters #1
-adSS2            % sufficient statistic for the retention and drift parameters #2
+adSS1            % sufficient statistic #1 for the retention and drift parameters in each context
+adSS2            % sufficient statistic #2 for the retention and drift parameters in each context
 b                % bias in each context
 beta             % global transition distribution
 betaE            % global emission distribution  
 bMu              % mean of the posterior of the bias in each context
 bPredMarg        % bias (marginal distribution, discretised)
-bSS1             % sufficient statistic for the bias parameter #1
-bSS2             % sufficient statistic for the bias parameter #2
+bSS1             % sufficient statistic #1 for the bias parameter in each context
+bSS2             % sufficient statistic #2 for the bias parameter in each context
 bVar             % variance of the posterior of the bias in each context
 C                % number of instantiated contexts
 c                % sampled context
@@ -239,14 +239,14 @@ vFilt            % variance of the filtered distribution of the state in each co
 <b>vPred            % variance of the predictive distribution of the state in each context</b> 
 vPrev            % variance of the filtered distribution of the state in each context on previous trial
 xFilt            % mean of the filtered distribution of the state in each context 
-xHat             % state predicted (average across contexts and particles)
+xHat             % average predicted state (average across contexts and particles)
 <b>xPred            % mean of the predictive distribution of the state in each context</b>
 xPredMarg        % predicted state (marginal distribution, discretised)
 xPrev            % mean of the filtered distribution of the state in each context on previous trial
-xPrevSamp        % state sampled on the previous trial (used to update the sufficient statistics for the retention and drift parameters)
-xSamp            % state sampled on the current trial (used to update the sufficient statistics for the bias parameter)
-xSampOld         % state sampled on the current trial (used to update the sufficient statistics for the retention and drift parameters)
-yHat             % state feedback predicted (average across contexts and particles)
-yPred            % state feedback predicted in each context
+xPrevSamp        % state sampled on previous trial (to update the sufficient statistics for the retention and drift parameters)
+xSamp            % state sampled on current trial (to update the sufficient statistics for the bias parameter)
+xSampOld         % state sampled on current trial (to update the sufficient statistics for the retention and drift parameters)
+yHat             % average predicted state feedback (average across contexts and particles)
+yPred            % mean of the predictive distribution of the state feedback in each context 
 yPredMarg        % predicted state feedback (marginal distribution, discretised)
 </pre>
