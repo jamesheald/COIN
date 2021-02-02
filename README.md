@@ -96,14 +96,14 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Fit group average data
 
-To fit the COIN model to group average data, create an array of objects (one object per participant):
+To calculate the negative log-likelihood for group average data, create an array of objects (one per participant):
 ```
 for p = 1:P % loop over participants
     
     % object for participant p
     obj(p) = COIN;
     
-    % parameters (same for all participants)
+    % parameters (these should be same for all participants)
     obj(p).sigmaQ = 0.0089;                          % standard deviation of process noise
     obj(p).adMu = [0.9425 0]                         % mean of prior of retention and drift
     obj(p).adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
@@ -123,7 +123,7 @@ After the object array has been created, the objective_COIN method can be called
 ```
 o = obj.objective_COIN;
 ```
-It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
+It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point of each participant).
 
 The adaptation data and paradigm (perturbations, sensory cues) associated with each object should be appropriate for the participant. 
 
