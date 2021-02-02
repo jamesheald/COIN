@@ -96,24 +96,42 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Fit group average data
 
-To fit the COIN model to group average data, create an array of objects (one object per participant). For example, to create an array of objects for a group of P participants:
+To fit the COIN model to group average data, create an array of objects (one object per participant):
 ```
-for p = 1:P
+for p = 1:P % loop over participants
+    
+    % object for participant p
     obj(p) = COIN;
+    
+    % parameters (same for all participants)
+    obj(p).sigmaQ = 0.0089;                          % standard deviation of process noise
+    obj(p).adMu = [0.9425 0]                         % mean of prior of retention and drift
+    obj(p).adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
+    obj(p).sigmaM = 0.0182                           % standard deviation of motor noise
+    obj(p).alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
+    obj(p).rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
+    
+    % paradigm for participant p
+    obj(p).x = ...;
+    
+    % adaptation for participant p
+    obj(p).adaptation = ...;
+    
 end
 ```
-Each object should have the same model parameters but different adaptation data. 
-The adaptation data and paradigm (perturbations, sensory cues) of each object should be appropriate for the participant. 
-
-Each object in the array should its own adaptation data and a paradigm (perturbations, sensory cues) participant.
-
-It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
-
-The objective_COIN method can then be called:
+After the object array has been created, the objective_COIN method can be called:
 ```
 o = obj.objective_COIN;
 ```
-and run the model by calling the run_COIN method on object obj:
+It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
+
+The adaptation data and paradigm (perturbations, sensory cues) associated with each object should be appropriate for the participant. 
+
+Each object should have the same model parameters but different adaptation data. 
+
+Each object in the array should its own adaptation data and a paradigm (perturbations, sensory cues) participant.
+
+
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
@@ -160,7 +178,7 @@ observeY                                  % is the state feedback observed or no
 eraserTrials                              % trials on which to overwrite context probabilities with stationary probabilities
 
 % measured adaptation data
-adaptation                                % vector of adaptation data (NaN if adaptation not measured)
+adaptation                                % vector of adaptation data (NaN if adaptation not measured on a trial)
 
 % store
 store                                     % variables to store in memory
