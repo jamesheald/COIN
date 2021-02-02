@@ -1,6 +1,6 @@
 # COIN
 
-The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. The model is described in detail in a [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1) paper.
+The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. The model is described in detail in a bioRxiv paper [Contextual inference underlies the learning of sensorimotor repertoires](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1).
 
 ## Dependencies
 
@@ -24,7 +24,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten. Data in properties can be operated on by methods (functions) of the class.
+This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten. The default model parameters are the parameters fit to the average Data in properties can be operated on by methods (functions) of the class.
 
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
@@ -102,7 +102,13 @@ for participant = 1:P
     obj(participant) = COIN;
 end
 ```
-Each object should have the same model parameters but different adaptation data. In general, the paradigm (perturbations, sensory cues) will also be unique to each object (participant).
+Each object should have the same model parameters but different adaptation data. In general, the paradigm (perturbations, sensory cues) will also be different for each object (participant). It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
+
+The objective_COIN method can then be called:
+```
+o = obj.objective_COIN;
+```
+and run the model by calling the run_COIN method on object obj:
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
