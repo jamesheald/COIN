@@ -90,8 +90,6 @@ A simple average across particles can be computed on each trial, as all particle
 
 The COIN model can be fit either to an individual participants’ data or to group average data. Because an individual participant is a special case of a group with 1 member, the general group case is presented here.
 
-#### Group average data
-
 The COIN model is fit to data by finding the parameters that minimise the negative log of the likelihood function. To calculate the negative log-likelihood for group average data, create an array of objects (one object per participant). For each object, define the model parameters, paradigm and adaptation data via [properties](#properties):
 ```
 for p = 1:P % loop over participants
@@ -122,11 +120,6 @@ After the object array has been created, call the objective_COIN method:
 o = obj.objective_COIN;
 ```
 This returns a stochastic estimate of the negative log-likelihood, which can be passed to an optimiser. The estimate is stochastic because it is calculated from simulations that are conditioned on random observation noise. To aid parameter optimisation, the variance of the estimate can be reduced by increasing the number of runs using the R property (this is best done in conjunction with [parallel computing](#parallel-computing) to avoid long runtimes). An optimiser that can handle a stochastic objective function should also be used (e.g., [BADS](https://github.com/lacerbi/bads)).
-
-#### Individual participants’ data
-
-
-To calculate the negative log-likelihood for an individual participants’ data, the proceedure described for group average data can be followed ().
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
