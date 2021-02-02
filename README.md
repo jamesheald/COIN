@@ -113,7 +113,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-The adaptation data should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of measured adaptation data points per participant (the *i*-th average adaptation data point is the average *i*-th adaptation data point across participants).  
+The adaptation data should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of adaptation measurements per participant (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
 
 After the object array has been created has been run, call the objective_COIN method:
 ```
