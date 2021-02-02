@@ -111,10 +111,10 @@ for p = 1:P % loop over participants
     obj(p).alpha = 8.9556                            % alpha hyperparameter of the Chinese restaurant franchise for the context
     obj(p).rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
     
-    % paradigm for participant p
+    % paradigm for participant p (possibly unique to each participant)
     obj(p).x = ...;
     
-    % adaptation for participant p
+    % adaptation for participant p (unique to each participant)
     obj(p).adaptation = ...;
     
 end
@@ -123,7 +123,7 @@ After the object array has been created, the objective_COIN method can be called
 ```
 o = obj.objective_COIN;
 ```
-It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point of each participant).
+It is assumed that there an equal number of adaptation measurements per participant (the *i*-th average adaptation data point is the average of the *i*-th adaptation data point across participants).
 
 The adaptation data and paradigm (perturbations, sensory cues) associated with each object should be appropriate for the participant. 
 
