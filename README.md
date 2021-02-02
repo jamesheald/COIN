@@ -57,16 +57,18 @@ Online inference does not require all of the past values of all inferred variabl
 ```
 obj.store = {'k','cFilt'};
 ```
-The store property must be set before calling the run_COIN method. The stored variables can be analysed after the model has been run. For example, to compute the Kalman gain of the context with the highest responsibility:
+The store property must be set before calling the run_COIN method. The stored variables can be analysed after the model has been run. As an example analysis, to compute the Kalman gain of the context with the highest responsibility:
 ```
-for trial = 1:numel(obj.x) % loop over trials
-    for particle = 1:obj.P % loop over particles
-        [~,j] = max(S{1}.cFilt(:,particle,trial));
-        k(particle,trial) = S{1}.k(j,particle,trial);
+for run = 1:obj.R % loop over runs
+    for trial = 1:numel(obj.x) % loop over trials
+        for particle = 1:obj.P % loop over particles
+            [~,j] = max(S{run}.cFilt(:,particle,trial));
+            k(particle,trial,run) = S{run}.k(j,particle,trial);
+        end
     end
 end
 ```
-A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. In contrast, a weighted average over runs must be comptued. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Plotting internal representations
 
