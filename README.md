@@ -237,7 +237,7 @@ sensoryNoise     % sensory noise
 transitionMatrix % expected value of the context transition matrix
 vFilt            % variance of the filtered distribution of the state in each context 
 <b>vPred            % variance of the predictive distribution of the state in each context</b> 
-vPrev            % variance of the filtered distribution of the state in each context 
+vPrev            % variance of the filtered distribution of the state in each context on previous trial
 xFilt            % mean of the filtered distribution of the state in each context 
 xHat             % state predicted (average across contexts and particles)
 <b>xPred            % mean of the predictive distribution of the state in each context</b>
