@@ -16,7 +16,7 @@ addpath(genpath('directory'))
 ```
 Here 'directory' is the full path to the root folder of the package.
 
-Also download and add COIN.m to the search path.
+Also add COIN.m to the search path.
 
 ## The model
 
