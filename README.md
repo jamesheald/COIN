@@ -104,10 +104,10 @@ for p = 1:P % loop over participants
     obj(p).rho = 0.2501                              % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
     
     % paradigm (could be unique to each participant)
-    obj(p).x = ...;
+    obj(p).x =
     
     % adaptation (unique to each participant)
-    obj(p).adaptation = ...;
+    obj(p).adaptation = ...
     
 end
 ```
