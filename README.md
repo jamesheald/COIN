@@ -96,18 +96,18 @@ for p = 1:P % loop over participants
     obj(p) = COIN;
     
     % parameters (same for all participants)
-    obj(p).sigmaQ = <insert>;              % standard deviation of process noise
-    obj(p).adMu = [<insert> 0]             % mean of prior of retention and drift
-    obj(p).adLambda = diag([<insert> <insert>]) % precision of prior of retention and drift
-    obj(p).sigmaM = <insert>               % standard deviation of motor noise
-    obj(p).alpha = <insert>                % alpha hyperparameter of the Chinese restaurant franchise for the context
-    obj(p).rho = <insert>                  % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
+    obj(p).sigmaQ = <>;              % standard deviation of process noise
+    obj(p).adMu = [<> 0]             % mean of prior of retention and drift
+    obj(p).adLambda = diag([<> <>]) % precision of prior of retention and drift
+    obj(p).sigmaM = <>               % standard deviation of motor noise
+    obj(p).alpha = <>                % alpha hyperparameter of the Chinese restaurant franchise for the context
+    obj(p).rho = <>                  % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
     
     % paradigm (could be unique to each participant)
-    obj(p).x = <insert>
+    obj(p).x = <>
     
     % adaptation (unique to each participant)
-    obj(p).adaptation = <insert>
+    obj(p).adaptation = <>
     
 end
 ```
@@ -156,7 +156,7 @@ H                                         % matrix of context-dependent observat
 
 % paradigm
 x                                         % vector of (noiseless) perturbations (NaN if channel trial)
-q                                         % vector of sensory cues (use consecutive integers starting form 1 to represent cues)
+q                                         % vector of sensory cues (represent cues using consecutive integers starting form 1)
 cuesExist                                 % does the experiment have sensory cues or not (set later based on q)
 T                                         % total number of trials (set later based on the length of x)
 trials                                    % trials to simulate (set later to 1:T if empty)
