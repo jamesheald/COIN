@@ -90,7 +90,7 @@ The COIN model is fit to data by finding the parameters that minimise the negati
 
 #### Group average data
 
-To calculate the negative log-likelihood for group average data, create an array of objects (one per participant). For each object, define the model parameters, paradigm and adaptation data via the appropriate [properties](#properties):
+To calculate the negative log-likelihood for group average data, create an array of objects (one per participant). For each object, define the model parameters, paradigm and adaptation data for the participant via [properties](#properties):
 ```
 for p = 1:P % loop over participants
     
@@ -115,7 +115,7 @@ end
 ```
 The adaptation data should be a vector with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of adaptation measurements per participant (the *i*-th average adaptation measurement is the average *i*-th adaptation measurement across participants).  
 
-After the object array has been created has been run, call the objective_COIN method:
+After the object array has been created, call the objective_COIN method:
 ```
 o = obj.objective_COIN;
 ```
@@ -123,7 +123,7 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Individual participants’ data
 
-To calculate the negative log-likelihood for an individual participants’ data, follow the same proceedure as for group average data (an individual participant is a special case of a group with 1 member).
+To calculate the negative log-likelihood for an individual participants’ data, the proceedure described for group average data can be followed (an individual participant is a special case of a group with 1 member).
 
 ### Inferring internal representations of the COIN model fit to adaptation data
 
