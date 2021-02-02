@@ -96,13 +96,18 @@ This returns a stochastic estimate of the negative log-likelihood, which can be 
 
 #### Fit group average data
 
-To fit the COIN model to group average data, create an object array (one object per participant) using indexed assignments:
+To fit the COIN model to group average data, create an object array (one object per participant) using indexed assignments. For example, to create an array of objects for a group of P participants:
 ```
-for participant = 1:P
-    obj(participant) = COIN;
+for p = 1:P
+    obj(p) = COIN;
 end
 ```
-Each object should have the same model parameters but different adaptation data. In general, the paradigm (perturbations, sensory cues) will also be different for each object (participant). It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
+Each object should have the same model parameters but different adaptation data. 
+The adaptation data and paradigm (perturbations, sensory cues) of each object should be appropriate for the participant. 
+
+Each object in the array should its own adaptation data and a paradigm (perturbations, sensory cues) participant.
+
+It is assumed that there an equal number of adaptation measurements per participant. The i-th average adaptation data point is the average of the i-th adaptation data point of each participant.
 
 The objective_COIN method can then be called:
 ```
