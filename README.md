@@ -232,7 +232,7 @@ nE               % cue emission counts
 p                % variance of state feedback predicted in each context
 pQ               % probability of the observed cue in each context        
 pY               % probability of the observed state feedback in each context
-Q                % number of cues observed so far
+Q                % number of cues observed
 sensoryNoise     % sensory noise
 transitionMatrix % expected value of the context transition matrix
 vFilt            % variance of the filtered distribution of the state in each context 
