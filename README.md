@@ -113,7 +113,7 @@ for p = 1:P % loop over participants
     
 end
 ```
-The adaptation data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured). There should be an equal number of adaptation data points per participant (the *i*-th average adaptation data point is the average *i*-th adaptation data point across participants).  The objective_COIN method can then be called:
+The adaptation data should be in vector form with one element per trial (use NaN on trials where adaptation was not measured), and there should be an equal number of measured adaptation data points per participant (the *i*-th average adaptation data point is the average *i*-th adaptation data point across participants).  The objective_COIN method can then be called:
 ```
 o = obj.objective_COIN;
 ```
