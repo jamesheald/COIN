@@ -14,7 +14,7 @@ Install the following packages (to improve the efficiency of the code):
   - Run make.m to compile the necessary mex files. 
 - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 
-Add each package to the MATLAB search path via the following command: 
+Add each package to the MATLAB search path using the following command: 
 ```
 addpath(genpath('directory'));
 ```
