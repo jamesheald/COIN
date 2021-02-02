@@ -68,7 +68,7 @@ for run = 1:obj.R % loop over runs
     end
 end
 ```
-A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. In contrast, a weighted average over runs must be comptued. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+A simple average across particles can be computed on each trial, as all particles within the same run have the same weight. In contrast, a weighted average over runs should be comptued. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Plotting internal representations
 
