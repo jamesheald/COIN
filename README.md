@@ -82,7 +82,7 @@ After the model has been run, call the plot_COIN method:
 ```
 P = obj.plot_COIN(S,w);
 ```
-This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot in this example. The structure P contains the data that is plotted (view the generate_figures method in COIN.m to see how the data in P is plotted). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
+This will generate the desired plots&mdash;a state | context plot and a predicted probabilities plot in this example. The structure P contains the data that is plotted (to see how the data in P is plotted, view the generate_figures method). Note that these plots may take some time to generate, as they require contexts in multiple particles and multiple runs to be relabelled on each trial. Once the contexts have been relabelled, the relevant variables or distributions are averaged across particles and runs. In general, using more runs will result in less variable results.
 
 ### Fitting the model to data
 
