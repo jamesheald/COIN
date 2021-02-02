@@ -103,7 +103,7 @@ for p = 1:P % loop over participants
     % object for participant p
     obj(p) = COIN;
     
-    % parameters (these should be same for all participants)
+    % parameters (same for all participants)
     obj(p).sigmaQ = 0.0089;                          % standard deviation of process noise
     obj(p).adMu = [0.9425 0]                         % mean of prior of retention and drift
     obj(p).adLambda = diag([837.1539 1.2227e+03].^2) % precision of prior of retention and drift
