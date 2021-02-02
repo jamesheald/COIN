@@ -229,7 +229,7 @@ mE               % number of tables in restaurant i serving dish j (Chinese rest
 motorNoise       % motor noise
 n                % context transition counts
 nE               % cue emission counts
-p                % variance of state feedback predicted in each context
+<b>pPred            % variance of state feedback predicted in each context</b>
 pQ               % probability of the observed cue in each context        
 pY               % probability of the observed state feedback in each context
 Q                % number of cues observed
@@ -247,6 +247,6 @@ xPrevSamp        % states sampled on previous trial (to update the sufficient st
 xSamp            % state sampled on current trial (to update the sufficient statistics for the bias parameter in each context)
 xSampOld         % states sampled on current trial (to update the sufficient statistics for the retention and drift parameters in each context)
 yHat             % average predicted state feedback (average across contexts and particles)
-yPred            % mean of the predictive distribution of the state feedback in each context 
+<b>yPred            % mean of the predictive distribution of the state feedback in each context</b>
 yPredMarg        % predicted state feedback (marginal distribution, discretised)
 </pre>
