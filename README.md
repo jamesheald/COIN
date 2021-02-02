@@ -24,7 +24,7 @@ The COIN model is implemented as a class in MATLAB. An object of the class can b
 ```
 obj = COIN;
 ```
-This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten. The default model parameters are the parameters fit to the average Data in properties can be operated on by methods (functions) of the class.
+This object has [properties](#properties) that define the model (e.g., model parameters) and the paradigm (e.g., perturbations, sensory cues). Some properties have default values, which can be overwritten. The default model parameters were fit to the average spontaneous and evoked recovery data sets in [Contextual inference underlies the learning of sensorimotor repertoires](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1). Data in properties can be operated on by methods (functions) of the class.
 
 To simulate learning on a simple paradigm, define a series of perturbations (use NaN to indicate a channel trial):
 ```
