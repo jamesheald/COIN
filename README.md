@@ -129,7 +129,7 @@ When multiple runs of a simulation are performed using parameters fit to data, e
 
 ### Parallel computing
 
-The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster) and thus reduce runtime, specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series. Parallel computing is available when calling the run_COIN method (running the model) and the objective_COIN method (fitting the model).
+The time it takes to execute multiple runs in series (using a for loop) can be prohibitively long if the number of runs is large. To execute multiple runs in parallel (e.g., across different CPU cores on a computer cluster), specify the maximum number of CPU cores that are available using the maxCores property. The default setting of maxCores is 0, which executes multiple runs in series. Parallel computing is available when calling the run_COIN method (running the model) and the objective_COIN method (fitting the model).
 
 ### Properties
 Below is a list of all the properties of the COIN class. A brief description of each property is provided.
