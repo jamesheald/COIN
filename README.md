@@ -65,12 +65,17 @@ for run = 1:obj.R % loop over runs
     for trial = 1:numel(obj.x) % loop over trials
         for particle = 1:obj.P % loop over particles
             [~,j] = max(S{run}.cFilt(:,particle,trial));
-            k(particle,trial,run) = S{run}.k(j,particle,trial);
+            k(trial,run,particle) = S{run}.k(j,particle,trial);
         end
     end
 end
 ```
-A simple average across particles within a run can be computed on each trial, as all particles within the same run have the same weight. In contrast, a weighted average over runs should be computed on each trial. For a full list of the names of variables that can be stored see [Variable names](#variable-names).
+A simple average across particles within a run can be computed on each trial, as all particles within the same run have the same weight. In contrast, a weighted average over runs should be computed on each trial:
+```
+figure
+plot(sum(mean(k,3).*w,2))
+```
+For a full list of the names of variables that can be stored see [Variable names](#variable-names).
 
 ### Plotting internal representations
 
