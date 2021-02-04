@@ -61,6 +61,7 @@ obj.store = {'k','cFilt'};
 ```
 The store property must be set before calling the run_COIN method. The stored variables can be analysed after the model has been run. As an example analysis, to compute the Kalman gain of the context with the highest responsibility:
 ```
+[S,w] = obj.run_COIN;
 for run = 1:obj.R % loop over runs
     for trial = 1:numel(obj.x) % loop over trials
         for particle = 1:obj.P % loop over particles
