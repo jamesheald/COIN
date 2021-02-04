@@ -71,7 +71,7 @@ for run = 1:obj.R % loop over runs
     end
 end
 ```
-On each trial, a simple average across particles within a run can be computed, as all particles within the same run have the same weight, whereas a weighted average over runs should be computed on each trial:
+On each trial, a simple average across particles within a run can be computed, as all particles within the same run have the same weight, whereas a weighted average across runs should be computed:
 ```
 figure
 plot(sum(mean(k,3).*w,2))
