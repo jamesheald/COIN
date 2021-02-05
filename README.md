@@ -20,7 +20,7 @@ Here 'directory' is the full path to the root folder of the package.
 
 ## Usage
 
-Instructions on how to use the project are provided on the [wiki](https://github.com/jamesheald/COIN/wiki).
+Instructions on how to use the COIN model are provided on the [wiki](https://github.com/jamesheald/COIN/wiki).
 
 ## Contact
 
