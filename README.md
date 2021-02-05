@@ -18,6 +18,16 @@ addpath(genpath('directory'));
 ```
 ## Usage
 
+## Contact
+
+Feel free to contact me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com )
+
+If you have trouble doing something with BADS:
+
+Check out the FAQ on the BADS wiki;
+Contact me at luigi.acerbi@nyu.edu, putting 'BADS' in the subject of the email.
+This project is under active development. If you find a bug, or anything that needs correction, please let me know.
+
 ## License
 
 The COIN model is released under the terms of the GNU General Public License v3.0.
