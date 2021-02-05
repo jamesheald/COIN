@@ -16,7 +16,7 @@ Add each package to the MATLAB search path using the following command:
 ```
 addpath(genpath('directory'));
 ```
-## Installation
+## Usage
 
 ## License
 
