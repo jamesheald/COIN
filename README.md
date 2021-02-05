@@ -2,7 +2,7 @@
 
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
 
-The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. The model is described in detail in a recent bioRxiv preprint: [Contextual inference underlies the learning of sensorimotor repertoires](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1).
+The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts.
 
 ### Reference
 
