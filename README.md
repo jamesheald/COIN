@@ -24,7 +24,7 @@ Details on how to use the are provided on the [wiki](https://github.com/jameshea
 
 ## Contact
 
-Feel free to contact me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have a question or encounter a problem with the code.
+Feel free to contact me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions or encounter a problem with the code.
 
 ## License
 
