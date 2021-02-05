@@ -28,7 +28,7 @@ Instructions on how to use the COIN model can be found on the [wiki](https://git
 
 ## Contact information
 
-Feel free to e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions or encounter a problem with the code.
+Feel free to e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions or encounter any problems with the code.
 
 ## License
 
