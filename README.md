@@ -11,8 +11,14 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
    - "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh.
      - Run make.m to compile the necessary mex functions. 
    - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
-
+3. Install:
+   - "[Bayesian Adaptive Direct Search (BADS)](https://github.com/lacerbi/bads)" by Luigi Acerbi. 
 Add each package to the MATLAB search path using the following command: 
 ```
 addpath(genpath('directory'));
 ```
+## Installation
+
+## License
+
+The COIN model is released under the terms of the GNU General Public License v3.0.
