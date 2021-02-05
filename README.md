@@ -16,7 +16,7 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
 Add each package to the MATLAB search path using the following command: 
 ```
-addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package.
+addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package
 ```
 
 ## Usage
