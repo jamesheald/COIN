@@ -1,10 +1,32 @@
 # COIN
 
+The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts. Each memory stores information learned about the dynamical and sensory properties of the environment associated with the corresponding context.
+
+ that memory creation, updating, and expression are all controlled by a single computation -- contextual inference.
+
+The model accounts for key features of motor learning such as spontaneous recovery, savings, anterograde interference, how environmental consistency affects learning rates and the distinction between explicit and implicit learning.
+
+COIN can be used to model trial-based learning in force-field and visuomotor adaptation paradigms.
+
+The model is available for MATLAB and has been tested on Matlab R2020a.
+
+
+
+
+
+COIN is a trial-based model of learning in paradigms where a learner must estimate noisy scalar variables (e.g. the strength of a force field or the magnitude of a visuomotor rotation).
+
+
+BADS is a novel, fast Bayesian optimization algorithm designed to solve difficult optimization problems, in particular related to fitting computational models (e.g., via maximum likelihood estimation).
+
+BADS has been intensively tested for fitting behavioral, cognitive, and neural models, and is currently being used in many computational labs around the world. In our benchmark with real model-fitting problems, BADS performed on par or better than many other common and state-of-the-art MATLAB optimizers, such as fminsearch, fmincon, and cmaes [1].
+
+BADS is recommended when no gradient information is available, and the objective function is non-analytical or noisy, for example evaluated through numerical approximation or via simulation.
+
+
+
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
 
-The COIN (COntextual INference) model is a principled Bayesian model of learning a motor repertoire in which separate memories are stored for different contexts.
-
-MATLAB 2020.
 
 ### Reference
 
