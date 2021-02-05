@@ -1,6 +1,6 @@
 # COIN
 
-The COIN (COntextual INference) model [[1](#reference)] is a principled Bayesian model of motor learning in which separate memories are acquired for different contexts. It can be used to model learning in force-field and visuomotor adaptation paradigms. However, it is likely relevant to all forms of learning in which experience can be usefully broken down into discrete contexts&mdash;in the motor system and beyond.
+The COIN (COntextual INference) model [[1](#reference)] is a principled Bayesian model of motor learning in which separate memories are acquired for different contexts. Although it is a model learning in force-field and visuomotor adaptation paradigms, it is likely relevant to all forms of learning in which experience can be usefully broken down into discrete contexts&mdash;in the motor system and beyond.
 
 The key insight that memory creation, updating, and expression are all controlled by a single 15
 computation – contextual inference
