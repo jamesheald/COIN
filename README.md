@@ -4,10 +4,6 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
 The COIN model was developed in MATLAB and has been tested on Matlab R2020a.
 
-### Reference
-
-1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
-
 ## Installation
 
 1. Download the COIN.m file.
@@ -22,10 +18,13 @@ Add each package to the MATLAB search path using the following command:
 ```
 addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package
 ```
-
 ## Usage
 
 Instructions on how to use the COIN model are provided on the [wiki](https://github.com/jamesheald/COIN/wiki).
+
+## Reference
+
+1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
 
 ## Contact information
 
