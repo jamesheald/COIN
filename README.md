@@ -6,7 +6,7 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
 ### Reference
 
-Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies sensorimotor learning. bioRxiv doi: 10.1101/2020.11.23.394320v1
+Heald J, Lengyel M, Wolpert D. 2020. [Contextual inference underlies the learning of sensorimotor repertoires](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1). bioRxiv doi: 10.1101/2020.11.23.394320v1
 
 ## Installation
 
