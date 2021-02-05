@@ -17,7 +17,10 @@ Add each package to the MATLAB search path using the following command:
 addpath(genpath('directory'));
 ```
 Here 'directory' is the full path to the root folder of the package.
+
 ## Usage
+
+Details on how to use the are provided on the [wiki](https://github.com/jamesheald/COIN/wiki).
 
 ## Contact
 
