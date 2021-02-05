@@ -4,17 +4,10 @@ The COIN (COntextual INference) model is a principled Bayesian model of learning
 
  that memory creation, updating, and expression are all controlled by a single computation -- contextual inference.
 
-The model accounts for key features of motor learning such as spontaneous recovery, savings, anterograde interference, how environmental consistency affects learning rates and the distinction between explicit and implicit learning.
-
-COIN can be used to model trial-based learning in force-field and visuomotor adaptation paradigms.
+The COIN mode; has been used to model trial-based learning in force-field and visuomotor adaptation paradigms and can account for key features of motor learning such as spontaneous recovery, savings, anterograde interference, how environmental consistency affects learning rates and the distinction between explicit and implicit learning.
 
 The model is available for MATLAB and has been tested on Matlab R2020a.
 
-
-
-
-
-COIN is a trial-based model of learning in paradigms where a learner must estimate noisy scalar variables (e.g. the strength of a force field or the magnitude of a visuomotor rotation).
 
 
 BADS is a novel, fast Bayesian optimization algorithm designed to solve difficult optimization problems, in particular related to fitting computational models (e.g., via maximum likelihood estimation).
