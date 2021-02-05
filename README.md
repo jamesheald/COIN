@@ -8,19 +8,6 @@ The COIN model can be used to model trial-based learning in force-field and visu
 
 The COIN model was developed for MATLAB and has been tested on Matlab R2020a.
 
-
-
-BADS is a novel, fast Bayesian optimization algorithm designed to solve difficult optimization problems, in particular related to fitting computational models (e.g., via maximum likelihood estimation).
-
-BADS has been intensively tested for fitting behavioral, cognitive, and neural models, and is currently being used in many computational labs around the world. In our benchmark with real model-fitting problems, BADS performed on par or better than many other common and state-of-the-art MATLAB optimizers, such as fminsearch, fmincon, and cmaes [1].
-
-BADS is recommended when no gradient information is available, and the objective function is non-analytical or noisy, for example evaluated through numerical approximation or via simulation.
-
-
-
-A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
-
-
 ### Reference
 
 1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([link to preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
