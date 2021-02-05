@@ -24,4 +24,4 @@ Feel free to contact me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com)
 
 ## License
 
-The COIN model is released under the terms of the GNU General Public License v3.0.
+COIN is released under the terms of the GNU General Public License v3.0.
