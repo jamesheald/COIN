@@ -22,9 +22,9 @@ Here 'directory' is the full path to the root folder of the package.
 
 Instructions on how to use the COIN model are provided on the [wiki](https://github.com/jamesheald/COIN/wiki).
 
-## Contact
+## Contact information
 
-Feel free to contact me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions or encounter a problem with the code.
+Feel free to e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions or encounter a problem with the code.
 
 ## License
 
