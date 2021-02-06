@@ -6,7 +6,7 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
 
 ### Reference
 
-1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
+1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([link to preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
 
 ## Installation
 
@@ -17,8 +17,7 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
    - "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh.
      - Run make.m to compile the necessary mex functions. 
    - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
-
-Add each package to the MATLAB search path using the following command: 
+3. Add each package to the MATLAB search path using the following command: 
 ```
 addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package
 ```
