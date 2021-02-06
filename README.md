@@ -24,7 +24,7 @@ addpath(genpath('directory')); % 'directory' is the full path to the root folder
 ```
 ## Usage
 
-Instructions on how to use the COIN model can be found on the [wiki](https://github.com/jamesheald/COIN/wiki).
+Instructions for how to use the COIN model can be found on the [COIN wiki](https://github.com/jamesheald/COIN/wiki).
 
 ## Contact information
 
