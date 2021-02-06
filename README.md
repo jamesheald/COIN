@@ -4,6 +4,10 @@ The COIN (COntextual INference) model [[1](#reference)] is a principled Bayesian
 
 The model was developed in MATLAB and has been tested on Matlab R2020a.
 
+<p align="center">
+<img src="https://github.com/jamesheald/COIN/blob/main/spotaneous_recovery.png" width="633.5000" height="361.0000">
+</p>
+
 ### Reference
 
 1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([link to preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
