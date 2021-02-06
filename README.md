@@ -18,6 +18,11 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
      - Run make.m to compile the necessary mex functions. 
    - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 3. Add each package to the MATLAB search path using the following command: 
+
+    ```
+    Code
+    More Code
+    ```
 ```
 addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package
 ```
