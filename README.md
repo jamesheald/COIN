@@ -19,7 +19,7 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
    - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
 3. Add each package to the MATLAB search path using the following command: 
     ```
-    addpath(genpath('directory')); % 'directory' is the full path to the root folder of the package
+    addpath(genpath('directory')); % 'directory' is the full path to the base folder of the package
     ```
     
 ## Usage
