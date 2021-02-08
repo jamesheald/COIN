@@ -28,7 +28,7 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
     
 ## Usage
 
-Instructions for how to use the COIN model can be found on the [COIN wiki page](https://github.com/jamesheald/COIN/wiki).
+Instructions for how to use the COIN model can be found on the [COIN wiki](https://github.com/jamesheald/COIN/wiki).
 
 ## Contact information
 
