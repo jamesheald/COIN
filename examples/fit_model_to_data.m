@@ -1,17 +1,17 @@
 % run the COIN model
 obj = COIN;
-obj.x = [zeros(1,50) ones(1,100) zeros(1,50)]; % perturbations
-obj.x(5:10:end-5) = NaN; % occasional channel trials
-obj.q = [ones(1,50) 2*ones(1,100) ones(1,50)]; % sensory cues
-[S,w] = obj.run_COIN;
+obj.perturbations = [zeros(1,50) ones(1,100) zeros(1,50)]; % perturbations
+obj.perturbations(5:10:end-5) = NaN; % occasional channel trials
+obj.cues = [ones(1,50) 2*ones(1,100) ones(1,50)]; % sensory cues
+S = obj.simulate_COIN;
 
 % define the paradigm
-perturbations = obj.x;
-cues = obj.q;
+perturbations = obj.perturbations;
+cues = obj.cues;
 
 % generate synthetic force-field adaptation data (NaN if adaptation not measured)
 adaptation = NaN(1,200);
-adaptation(isnan(obj.x)) = S{1}.yHat(isnan(obj.x));
+adaptation(isnan(obj.perturbations)) = S.runs{1}.yHat(isnan(obj.perturbations));
 
 % BADS options
 options = [];
@@ -43,26 +43,27 @@ function negativeLogLikelihood = fit_COIN(param,perturbations,cues,adaptation)
     for p = 1:P % loop over participants
 
         % parameters (same for all participants)
-        obj(p).sigmaQ = param(1);                       % standard deviation of process noise
-        obj(p).adMu = [param(2) 0];                     % mean of prior of retention and drift
-        obj(p).adLambda = diag([param(3) param(4)].^2); % precision of prior of retention and drift
-        obj(p).sigmaM = param(5);                       % standard deviation of motor noise
-        obj(p).alpha = param(6);                        % alpha hyperparameter of the Chinese restaurant franchise for the context
-        obj(p).rho = param(7);                          % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context
-        obj(p).alphaE = param(8);                       % alpha hyperparameter of the Chinese restaurant franchise for the cue emissions
+        obj(p).sigma_process_noise = param(1);         % standard deviation of process noise
+        obj(p).prior_mean_retention = param(2);        % prior mean of retention
+        obj(p).prior_precision_retention = param(3)^2; % prior precision (inverse variance) of retention
+        obj(p).prior_precision_drift = param(4)^2;     % prior precision (inverse variance) of drift
+        obj(p).sigma_motor_noise = param(5);           % standard deviation of motor noise
+        obj(p).alpha_context = param(6);               % alpha hyperparameter of the Chinese restaurant franchise for the context transitions
+        obj(p).rho_context = param(7);                 % rho (self-transition) hyperparameter of the Chinese restaurant franchise for the context transitions
+        obj(p).alpha_cue = param(8);                   % alpha hyperparameter of the Chinese restaurant franchise for the cue emissions
 
         % paradigm (often unique to each participant)
-        obj(p).x = perturbations(p,:);
-        obj(p).q = cues(p,:);
+        obj(p).perturbations = perturbations(p,:);
+        obj(p).cues = cues(p,:);
 
         % adaptation (unique to each participant)
         obj(p).adaptation = adaptation(p,:);
             
         % number of runs
-        obj(p).R = 1;
+        obj(p).runs = 1;
             
         % number of CPUs available
-        obj(p).maxCores = 0;
+        obj(p).max_cores = 0;
 
     end
 
