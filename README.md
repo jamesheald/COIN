@@ -15,7 +15,7 @@ The model was developed in MATLAB and has been tested on Matlab R2020a.
 ## Installation
 
 1. Download the COIN.m file.
-2. Install the following packages to improve the efficiency of the code:
+2. Install the following packages:
    - "[Lightspeed matlab toolbox](https://github.com/tminka/lightspeed)" by Tom Minka. 
    - "[Nonparametric Bayesian Mixture Models - release 2.1](http://www.stats.ox.ac.uk/~teh/software.html)" by Yee Whye Teh.
    - "[Truncated Normal Generator](https://web.maths.unsw.edu.au/~zdravkobotev/)" by Zdravko Botev.
