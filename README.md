@@ -5,7 +5,7 @@ The COIN (COntextual INference) model [[1](#reference)] is a principled Bayesian
 The model was developed in MATLAB and has been tested on MATLAB R2020a.
 
 <p align="center">
-<img src="https://github.com/jamesheald/COIN/blob/main/images/3_Contributions.png" width="966" height="410.8">
+<img src="https://github.com/jamesheald/COIN/blob/main/images/3_Contributions.png" width="805" height="342.3">
 <!--<img src="https://github.com/jamesheald/COIN/blob/main/images/spontaneous_recovery.png" width="633.5000" height="361.0000">-->
 </p>
 
