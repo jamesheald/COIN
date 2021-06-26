@@ -11,7 +11,7 @@ The model was developed in MATLAB and has been tested on MATLAB R2020a.
 
 ### Reference
 
-1. Heald J, Lengyel M, Wolpert D. 2020. Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320 ([link to preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
+1. __Heald, J. B.__, Lengyel, M., Wolpert, D. M. (2020). Contextual inference underlies the learning of sensorimotor repertoires. *bioRxiv* doi: 10.1101/2020.11.23.394320. ([link to preprint](https://www.biorxiv.org/content/10.1101/2020.11.23.394320v1))
 
 ## Installation
 
