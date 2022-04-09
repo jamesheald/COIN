@@ -11,7 +11,7 @@ The model was developed in MATLAB and has been tested on MATLAB R2020a.
 
 ### References
 
-1. __Heald, J.B.__, Lengyel, M. & Wolpert, D.M. Contextual inference underlies the learning of sensorimotor repertoires. *Nature* (2021). https://doi.org/10.1038/s41586-021-04129-3 [[SharedIt link](https://rdcu.be/cBYhM)]
+1. [__Heald, J.B.__, Lengyel, M. & Wolpert, D.M. Contextual inference underlies the learning of sensorimotor repertoires. *Nature* 600, 489–493 (2021).](https://doi.org/10.1038/s41586-021-04129-3) [[SharedIt link](https://rdcu.be/cBYhM)]
 2. Collins, A.G.E. & McDougle, S.D. Context is key for learning motor skills. *Nature* (2021). https://doi.org/10.1038/d41586-021-03028-x
 
 ## Installation
